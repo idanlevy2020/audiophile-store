@@ -1,0 +1,30 @@
+.Footer{
+    background-color: #101010;
+    padding-top: 40px;
+    margin-top: 160px;
+}
+
+.Footer-container {
+    margin: 0px 50px;
+}
+
+.Footer-container > .Footer-text , .Footer-container > .Footer-navbarAndGeneralLinks{
+    -ms-flex: 1; /* IE 10 */
+    flex: 1;/*let all the flexible items be the same length*/
+    color: white;
+}
+
+.Footer-text > p{
+    margin: 20px 0px;
+}
+
+.Footer-general-links{ /*icons*/
+    margin-top: 50px;
+    justify-content: flex-end;
+}
+
+.Footer-general-links >img{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+}

@@ -1,0 +1,62 @@
+.btn {
+   border: none;
+   cursor: pointer;
+   text-transform: uppercase;
+   --color: black;
+}
+/* colors */
+.btn.orange {
+   --color: #d87d4a;
+}
+
+.btn.orange:hover{
+   --color: #fbaf85;
+}
+
+.btn.black {
+   --color: #101010;
+}
+
+.btn.black:hover{
+   --color: #4c4c4c;
+}
+
+/* variants */
+.btn.contained {
+   color: white;
+   background-color: var(--color);
+}
+
+.btn.outlined {
+   border: 1px solid var(--color);
+   color: var(--color);
+   background-color: transparent;
+}
+
+.btn.outlined:hover {
+   /* border: 1px solid var(--color); */
+   color:white;
+   background-color: black;
+}
+
+.btn.text {
+   color: gray;
+   background-color: transparent;
+   font-size: 13px;
+   font-weight: bold;
+}
+
+.btn.text:hover{
+   color:#d87d4a;
+}
+/* sizes */
+.btn.small {
+   width: 160px;
+   height: 48px;
+}
+.btn.medium {
+   padding: 4px 8px;
+}
+.btn.large {
+   padding: 8px 16px;
+}

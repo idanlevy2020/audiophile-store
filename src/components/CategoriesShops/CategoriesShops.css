@@ -1,0 +1,47 @@
+.CategoriesShops {
+   padding-top: 200px;
+   background-color: white;
+   padding: 0px 50px;
+}
+
+.CategoriesShops > .shops {
+   justify-content: space-between;
+   height: 400px;
+}
+
+.CategoriesShops > .shops  > .CategoriesShopsMain {
+   background-color: #f1f1f1;
+   width: 350px;
+   height: 204px;
+   position: relative;
+}
+
+
+.CategoriesShops > .shops > .CategoriesShopsMain> img {
+   width: 250px;
+   position: absolute;
+   top: -110px;
+   left: 50px;
+   /* transform: translate(50px, -110px);  */
+   cursor: pointer;
+} 
+
+.CategoriesShops > .shops > .CategoriesShopsMain> .category-btn-block {
+   position: absolute;
+   top: 70%;
+   left: 50%;
+   transform: translate(-50%, -70%); 
+   padding-left: 20px;
+   padding-right: 20px; 
+   text-align: center;
+ }
+
+ .category-btn-block h3{
+   letter-spacing: 1.29px;
+}
+
+/*icon > */
+.category-btn-block .btn i{
+   color:orange;
+   margin-left: 10px;
+}

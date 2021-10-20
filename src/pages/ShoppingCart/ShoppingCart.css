@@ -1,0 +1,13 @@
+.ShoppingCartMain{
+   text-align: center;
+}
+
+.ShoppingCartMain img{
+   width : 200px;
+   height : 200px;
+}
+
+.ShoppingCartMain p{
+   font-size : 30px;
+   margin: 30px 0px;
+}

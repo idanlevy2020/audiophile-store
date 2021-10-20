@@ -1,0 +1,32 @@
+.Products{
+   margin: 0px 50px 160px 50px;
+   justify-content: space-between;
+}
+
+.Products > img{
+   width: 540px;
+   height: 560px;
+   background-color:gray;
+}
+
+.Products > .productDetails{
+   width: 445px;
+}
+
+.Products > .productDetails > h3{
+   color:#d87d4a;
+   font-weight: 400;
+   font-weight: bold;
+   letter-spacing: 10px;
+}
+
+.Products > .productDetails > h1{
+   font-size:50px;
+   line-height: 1.2;
+}
+
+.Products > .productDetails > p{
+   color: gray;
+   margin-bottom: 48px;
+}
+

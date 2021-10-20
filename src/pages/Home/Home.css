@@ -1,0 +1,72 @@
+.Home{
+   background-color: white;
+}
+
+/**********************.Home-part1 *****************************/
+.Home-part1{
+   background-color: #101010;
+   padding: 100px 0px 50px 0px;
+   margin-bottom: 120px; 
+}
+
+.Home .Home-part1 .newProduct {
+   width: 360px;
+   height:350px;
+   color: white;
+   margin: 0px 50px;
+   justify-content: space-between;
+}
+
+.Home .Home-part1 .newProduct h1{
+   font-size:50px;
+   font-weight: 500;
+   line-height: 1.04;
+   letter-spacing: 2px;
+}
+
+/**********************.Home-part3 *****************************/
+.Home .Home-part3 {
+   background-color: #d87d4a;
+   color: white;
+   padding: 150px;
+   margin-bottom: 120px;
+}
+
+.Home .Home-part3 .ZX9speaker {
+   justify-content: space-between;
+   width: 330px;
+   height: 350px;
+   margin-right: 50px;
+   margin-left: 80%;
+}
+
+.Home .Home-part3 .ZX9speaker > h1 {
+   font-size: 66px;
+   font-weight: normal;
+   line-height: 1;
+}
+
+/**********************.Home-part4 *****************************/
+ .Home-part4 {
+   position: relative;
+   margin-bottom: 120px;
+ }
+
+ .Home-part4 img{
+    width: 100%;
+    border-radius: 8px;
+ }
+ 
+ .ZX7speaker {
+   position: absolute;
+   top: 50%;
+   left: 20%;
+   /* transform: translate(-50%, -50%); */
+   padding-left: 20px;
+   padding-right: 20px;
+ }
+
+ .Home-part5 {
+   margin-bottom: 120px;
+ }
+

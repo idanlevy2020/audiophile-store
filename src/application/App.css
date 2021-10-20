@@ -1,0 +1,25 @@
+*{
+  line-height: 1.6;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.App {
+  background-color: white;
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap{
+  flex-wrap: wrap;
+}
+
+
