@@ -45,3 +45,31 @@
    color:orange;
    margin-left: 10px;
 }
+
+
+@media screen and (max-width: 375px) {  
+   .CategoriesShops > .shops  > .CategoriesShopsMain {
+      width: 327px;
+      height: 165px;
+      margin: 52px 0 0;
+      padding: 24px 64px 22px;
+   }
+
+   /* width: 327px;
+   height: 165px;
+   margin: 52px 0 0;
+   padding: 24px 64px 22px;
+   border-radius: 8px;
+   background-color: #f1f1f1; */
+   .CategoriesShops > .shops > .CategoriesShopsMain> img {
+      /* width: 250px; */
+      /* position: absolute; */
+      top: -30px;
+      left: 50px;
+      /* transform: translate(50px, -110px);  */
+      /* cursor: pointer; */
+      width: 79.9px;
+      height: 104px;
+   } 
+   
+}

@@ -1,0 +1,105 @@
+.ProductDetails-page{
+    margin: 160px 50px 0px 50px;
+ }
+ 
+ .ProductDetails-part1,.ProductDetails-part2{
+    margin-bottom: 160px;
+ }
+    
+ /*********************** .ProductDetails-part1 ***********************/
+ .ProductDetails-part1{
+    justify-content: space-between;
+    align-items: center;
+ }
+ 
+ .ProductDetails-part1 > img{
+    width: 540px;
+    height: 560px;
+    background-color:gray;
+ }
+ 
+ .ProductDetails-part1-productDetails{
+    width: 445px;
+    height:400px;
+    justify-content: space-between;
+ }
+ 
+ .ProductDetails-part1-productDetails > h1{
+    line-height: 1.2;
+    font-size: 40px;
+    font-weight: 650;
+ }
+ 
+ .ProductDetails-part1-productDetails > h3{
+    color:#d87d4a;
+    font-weight: 400;
+    font-weight: bold;
+    letter-spacing: 10px;
+ }
+ 
+ .ProductDetails-part1-productDetails > p{
+    color: gray;
+ }
+ 
+ .ProductDetails-part1-productDetails-btns{
+    align-items: center;
+ }
+ 
+ .countBtn {
+    width: 120px;
+    height: 48px;
+    padding: 1px 6px;
+    font-size: 13px;
+    margin: 0 16px 0 0;
+    padding: 15px 15.5px;
+    background-color: #f1f1f1;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+ }
+ 
+ .countBtn:hover {
+    background-color: lightgray;
+ }
+ 
+ /*********************** .ProductDetails-part2 ***********************/
+ .ProductDetails-part2{
+    justify-content: space-between;
+ }
+ 
+ .ProductDetails-part2 .features{
+    width: 635px;
+    height:320px;
+    justify-content: space-between;
+ }
+ 
+ .ProductDetails-part2 .inTheBox{
+    width: 350px;
+ }
+ 
+ .ProductDetails-part2 .inTheBox > h1{
+    margin-bottom:30px;
+ }
+ 
+ 
+ /*********************** .ProductDetails-part3 ***********************/
+ .ProductDetails-part3-images{
+    justify-content: space-between;
+    height: 592px;
+ }
+ 
+ .ProductDetails-part3-images .ProductDetails-part3-sideLeft{
+    justify-content: space-between;
+ }
+ 
+ .ProductDetails-part3-images .ProductDetails-part3-sideLeft img{
+    width: 445px;
+    height: 280px;
+    border-radius: 5px;
+ }
+ 
+ .ProductDetails-part3-images .ProductDetails-part3-sideRight{
+    width: 635px;
+    border-radius: 20px;
+ }
+ 

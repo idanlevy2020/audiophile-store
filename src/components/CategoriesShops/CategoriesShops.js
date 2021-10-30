@@ -24,7 +24,7 @@ function CategoriesShops() {
    }];
    return (
       <div className="CategoriesShops">
-         <div className="shops flex-row">
+         <div className="shops flex-row wrap">
             {shops.map((shop,i) => {
                   return (
                      <CategoriesShopsMain key={i} img={shop.img} title={shop.title} path={shop.pathLink} button={shop.button} />

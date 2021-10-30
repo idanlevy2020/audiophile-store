@@ -13,7 +13,7 @@ const Button = (props) => {
       return <button className={className} {...rest} />;
    } else {
       //if deciding to use a different color
-      return (<button style={{ background: props.bgcolor }} className={className} {...rest}/>
+      return (<button style={{ background: props.bgcolor }} className={className} {...rest} onClick={props.onClick}/>
       );
    }
 };

@@ -2,13 +2,14 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 
-function Header() {
+function Header(props) {
    const links = [
       { path: "/", text: "HOME" },
       { path: "/headphones", text: "HEADPHONES" },
       { path: "/speakers", text: "SPEAKERS" },
       { path: "/earphones", text: "EARPHONES" },
    ];
+   
    return (
       <div className="Header">
          <div className="Header-container flex-row">
@@ -17,7 +18,7 @@ function Header() {
             <Link to={"/shoppingCart"}>
                <button className="shoppingCartBtn" title="Shopping Cart">
                   <img src="/icons/white-24dp/outline_shopping_cart_white_24dp.png" alt="shoppingCart" />
-                  <span className="badge">0</span>
+                  <span className="badge">{props.countProducts}</span>
                </button>
             </Link>
          </div>

@@ -4,13 +4,13 @@
 }
 
 .Products > img{
-   width: 540px;
-   height: 560px;
+   max-width: 540px;
+   max-height: 560px;
    background-color:gray;
 }
 
 .Products > .productDetails{
-   width: 445px;
+   max-width: 445px;
 }
 
 .Products > .productDetails > h3{
@@ -23,10 +23,61 @@
 .Products > .productDetails > h1{
    font-size:50px;
    line-height: 1.2;
+   margin-bottom: 32px;
 }
 
 .Products > .productDetails > p{
    color: gray;
    margin-bottom: 48px;
+}
+
+
+@media screen and (min-width:376px) and (max-width:768px) {  
+
+   .Products > img{
+      /* width: 327px;
+      height: 352px;
+      m */
+      margin-right: 69px;
+      width: 281px;
+      height: 480px;
+   }
+
+   .Products > .productDetails{
+      width: 445px;
+   }
+   
+   .Products > .productDetails > h3{
+   /*NEW PRODUCT*/
+      display:none;
+   }
+   
+   .Products > .productDetails > h1{
+      font-size: 32px;
+      line-height: 1.14;
+      width: 339px;
+      height: 64px;
+   }
+   
+   .Products > .productDetails > p{
+      font-size: 15px;
+   }
+}
+
+@media screen and (max-width:375px) {
+   .Products{
+      text-align: center;
+      flex-wrap: wrap;    
+   }
+
+   .Products > .productDetails > h3{
+      /*NEW PRODUCT*/
+         display:none;
+      }
+
+   .Products > img{
+      width: 281px;
+      height: 480px;
+   }
 }
 
