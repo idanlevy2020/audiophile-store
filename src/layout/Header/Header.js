@@ -18,7 +18,7 @@ function Header(props) {
             <Link to={"/shoppingCart"}>
                <button className="shoppingCartBtn" title="Shopping Cart">
                   <img src="/icons/white-24dp/outline_shopping_cart_white_24dp.png" alt="shoppingCart" />
-                  <span className="badge">{props.countProducts}</span>
+                  <span className="badge">{props.countItemsCart}</span>
                </button>
             </Link>
          </div>

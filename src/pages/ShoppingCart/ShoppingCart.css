@@ -13,12 +13,23 @@
 }
 
 /******************************************************/
+.ShoppingCart .GoBackBtn{
+   border:none;
+   background-color:white;
+   font-size: 15px;
+   color: black;
+}
 .ShoppingCartItems {
    margin: 50px 12px 50px 12px;
 }
 
+.ShoppingCartItems > .products-cart-list{
+   margin-bottom: 50px;
+}
+
 .ShoppingCartItems .ShowItemsInCart {
    justify-content: space-around;
+   align-items: center;
    border-bottom: 1px solid gray;
    margin-bottom: 20px;
 }
@@ -26,4 +37,17 @@
    width : 120px;
    height : 120px;
    margin-bottom: 12px;
+}
+
+.ShoppingCartItems .ShowItemsInCart >h3{
+   width : 200px;
+}
+
+.ShoppingCartItems .ShowItemsInCart button{
+   width : 100px;
+   font-size: 18px;
+}
+
+.ShoppingCartItems > .container-btnCheckout{
+  justify-content: flex-end;
 }

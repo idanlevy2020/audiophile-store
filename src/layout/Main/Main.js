@@ -13,7 +13,7 @@ import {
   } from "react-router-dom";
 
 function Main() {
-    const [products,cart,addtoCart]=useContext(CartContext);
+    const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart]=useContext(CartContext);
     return (<div className="Main"> 
         {/* A <Switch> looks through its children <Route>s and
         renders the first one that matches the current URL. */}
@@ -49,7 +49,7 @@ function Main() {
               <ShoppingCart />
           </Route>
           <Route exact path="/">
-              <Home />
+              <Home products={products}/>
           </Route>
         </Switch>
     </div>);
