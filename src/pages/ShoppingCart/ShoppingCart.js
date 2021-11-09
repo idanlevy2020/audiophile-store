@@ -6,8 +6,7 @@ import Button from "../../components/Button/Button";
 import { useHistory } from 'react-router-dom';
 
 function ShoppingCart() {
-   const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart] = useContext(CartContext);
-   const [totalPrice, setTotalPrice] = useState(0);
+   const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart,totalPrice] = useContext(CartContext);
    console.log('in ShoppingCart cart.length',cart.length);
    let history = useHistory();
    return (
@@ -36,7 +35,7 @@ function MessegeForCartEmpty() {
 
 
 function ShowItemsInCart(props) {
-   const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart] = useContext(CartContext);
+   const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart,totalPrice] = useContext(CartContext);
    return (
       <div className="ShowItemsInCart flex-row" key={props.i}>
          {props.item.image}
@@ -53,7 +52,7 @@ function ShowItemsInCart(props) {
 
 
 function ShoppingCartItems() {
-   const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart] = useContext(CartContext);
+   const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart,totalPrice] = useContext(CartContext);
    return (
       <div className="ShoppingCartItems flex-column">
             <h2> cart ({cart.length}) total items ({countItemsCart})</h2>

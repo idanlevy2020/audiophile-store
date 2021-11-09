@@ -1,18 +1,14 @@
-import "./App.css";
-import Header from "../layout/Header/Header";
-import Main from "../layout/Main/Main";
-import Footer from "../layout/Footer/Footer";
-import data from "../components/data";
-import {useState,createContext} from "react";
-export const CartContext = createContext();
+import { createContext, useState } from "react";
 
-function App() {
-   const products = [...data]; //// using spread to copy array...
+export const StoreContext = createContext();
+
+export function StoreProvider(props) {
+   
    const [cart,setCart]= useState([]);
    const [totalPrice,setTotalPrice] = useState(0);
+   console.log('totalPrice:',totalPrice);
    //I used an countItemsCart because the cart.length will give the amount of types of items
    const [countItemsCart,setCountItemsCart]= useState(0);
-   
 
    function addtoCart(product,countToAdd) {
       /*get product and count product to add
@@ -52,15 +48,14 @@ function App() {
       setCart(cart.filter((item)=>item!==product));
    }
 
-   return (
-      <div className="App">
-         <Header countItemsCart={countItemsCart}/>
-         <CartContext.Provider value={[products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart,totalPrice]}>
-           <Main />
-         </CartContext.Provider>
-         <Footer />
-      </div>
+
+   
+   // const value = { cart };
+   const value=[products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart,totalPrice];
+
+   return(
+      <StoreContext.Provider value={value}>
+         {props.children}
+      </StoreContext.Provider>
    );
 }
-
-export default App;

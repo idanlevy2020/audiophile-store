@@ -6,8 +6,9 @@ import {useContext} from "react";
 import {CartContext} from '../application/App'
 
 function Speakers() {
-   const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart]=useContext(CartContext);
-   const speakers=products.speakers;
+   const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart,totalPrice]=useContext(CartContext);
+   // const speakers=products.speakers;
+   const speakers=products.filter(product => product.type ==="speakers");
    
    const titleNewProduct="NEW PRODUCT";
    return (

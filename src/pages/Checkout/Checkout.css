@@ -1,0 +1,50 @@
+.Checkout-title{
+  margin-top:50px;
+}
+
+.Checkout .subtitle{
+  color: #d87d4a;
+  margin-top:53px;
+  margin-bottom: 16px;
+  letter-spacing: 0.93px;
+}
+
+.Checkout label{
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#adr{
+  width: 634px;
+}
+
+.Checkout input{
+  width: 309px;
+  height: 56px;
+  margin: 9px 0 0;
+  padding: 18px 141px 19px 24px;
+  border-radius: 8px;
+}
+
+.col-50{
+  justify-content: space-between;
+}
+
+.col-25{
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.icon-container i{
+  margin-right:20px;
+}
+
+.Checkout-part2{
+  margin: 64px 50px 0px 50px; 
+}

@@ -5,7 +5,7 @@ function NavBar(props) {
    const links = props.links;
    return (
       <div className="NavBar">
-         <ul className={props.flex}>
+         <ul>
             {links.map((link,i) => {
                return (
                   <li className="link" key={i}>

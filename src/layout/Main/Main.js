@@ -5,6 +5,7 @@ import Speakers from '../../pages/Speakers';
 import Earphones from '../../pages/Earphones';
 import ShoppingCart from '../../pages/ShoppingCart/ShoppingCart';
 import ProductDetails from '../../pages/ProductDetails/ProductDetails';
+import Checkout from '../../pages/Checkout/Checkout';
 import {useContext} from "react";
 import {CartContext} from '../../application/App';
 import {
@@ -13,7 +14,7 @@ import {
   } from "react-router-dom";
 
 function Main() {
-    const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart]=useContext(CartContext);
+    const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart,totalPrice]=useContext(CartContext);
     return (<div className="Main"> 
         {/* A <Switch> looks through its children <Route>s and
         renders the first one that matches the current URL. */}
@@ -22,34 +23,48 @@ function Main() {
               <Headphones />
            </Route>
           <Route exact path="/headphones/xx99mark1">
-              <ProductDetails product={products.headphones[0]}/>
+              <ProductDetails product={products.find(product => product.id==76730)}/>
           </Route>
           <Route exact path="/headphones/xx99mark2">
-              <ProductDetails product={products.headphones[1]}/>
+          <ProductDetails product={products.find(product => product.id==76731)}/>
           </Route>
           <Route exact path="/headphones/xx59">
-              <ProductDetails product={products.headphones[2]}/>
-          </Route>
-           <Route exact path="/speakers">
-              <Speakers/>
-          </Route>
-          <Route exact path="/speakers/zx9speaker">
-              <ProductDetails product={products.speakers[0]}/>
-          </Route>
-          <Route exact path="/speakers/zx7speaker">
-              <ProductDetails product={products.speakers[1]}/>
+          <ProductDetails product={products.find(product => product.id==76732)}/>
           </Route>
           <Route exact path="/earphones">
               <Earphones />
           </Route>
           <Route exact path="/earphones/yx1">
-              <ProductDetails product={products.earphones[0]}/>
+          <ProductDetails product={products.find(product => product.id==76733)}/>
           </Route>
+
+
+          {/* <Route  path="/products/:category/:prodcutId">
+              <ProductDetails />
+          </Route> */}
+        {/* <Route exact path="/products/:id"> */}
+          
+
+
+          <Route exact path="/speakers">
+              <Speakers/>
+          </Route>
+          <Route exact path="/speakers/zx9speaker">
+              <ProductDetails product={products.find(product => product.id==76734)}/>
+          </Route>
+          <Route exact path="/speakers/zx7speaker">
+               <ProductDetails product={products.find(product => product.id==76735)}/>
+          </Route> 
+
+
           <Route exact path="/shoppingCart">
               <ShoppingCart />
           </Route>
           <Route exact path="/">
               <Home products={products}/>
+          </Route>
+          <Route exact path="/checkout">
+              <Checkout/>
           </Route>
         </Switch>
     </div>);

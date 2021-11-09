@@ -7,7 +7,7 @@ import CategoriesShops from "../../components/CategoriesShops/CategoriesShops"
 import AboutUs from "../../components/AboutUs/AboutUs";
 
 function Home(props) {
-   const products=props.products;
+   // const products=props.products;
    return (
       <div className="Home">
          <div className="Home-part1 flex-row">

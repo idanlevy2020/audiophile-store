@@ -4,7 +4,7 @@ import {useContext} from "react";
 import {CartContext} from '../../application/App'
 
 export default function InTheBox() {
-   const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart] = useContext(CartContext);
+   const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart,totalPrice] = useContext(CartContext);
    return (
       <div className="InTheBox">
          <h1>IN THE BOX</h1>
