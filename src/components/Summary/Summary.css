@@ -1,11 +1,8 @@
-/* .Summary{
-   width: 689px;
-   height: 612px;
-} */
-
 .Summary{
-   width:100%;
+   max-width: 689px;
+   max-height: 612px;
 }
+
 
 .Summary > .items{
    margin: 31px 0px;

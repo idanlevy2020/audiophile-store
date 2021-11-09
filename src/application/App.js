@@ -27,7 +27,7 @@ function App() {
       })
       if(!productExists) setCart([...cart, {...product, count : countToAdd}]);
       setCountItemsCart(countItemsCart+countToAdd);
-      setTotalPrice(totalPrice+(product.price*countToAdd));
+      setTotalPrice(Math.round(totalPrice+(product.price*countToAdd)));
    }
 
    function subOneItemFromCart(product) {
@@ -35,6 +35,7 @@ function App() {
       if (countItemsCart==1){
          setCart([]);
          setCountItemsCart(0);
+         setTotalPrice(0);
       }
       else if(countItemsCart>1){
          cart.map((item)=>{
@@ -42,6 +43,7 @@ function App() {
                if(item.count>1) item.count=item.count-1
                else if(item.count==1) setCart(cart.filter((item)=>item!==product));
                setCountItemsCart(countItemsCart-1);
+               setTotalPrice(Math.round(totalPrice-product.price));
             } 
          })
       }

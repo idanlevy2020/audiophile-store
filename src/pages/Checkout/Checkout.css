@@ -1,10 +1,19 @@
-.Checkout-title{
+.Checkout{
+  margin-top:53px;
+}
+
+form{
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.checkout-part1, .checkout-part2 , .checkout-part3{
   margin-top:50px;
 }
 
 .Checkout .subtitle{
   color: #d87d4a;
-  margin-top:53px;
   margin-bottom: 16px;
   letter-spacing: 0.93px;
 }
@@ -12,10 +21,6 @@
 .Checkout label{
   font-weight: bold;
   margin-bottom: 5px;
-}
-
-#adr{
-  width: 634px;
 }
 
 .Checkout input{
@@ -26,14 +31,12 @@
   border-radius: 8px;
 }
 
-.col-50{
-  justify-content: space-between;
+.col , .box{
+  display:flex;
+  flex-direction: column;
+  /* border:1px solid black; */
 }
 
-.col-25{
-  display: flex;
-  flex-direction: column;
-}
 
 .icon-container {
   margin-bottom: 20px;
@@ -45,6 +48,17 @@
   margin-right:20px;
 }
 
-.Checkout-part2{
+/* .checkout-part2{
   margin: 64px 50px 0px 50px; 
+  justify-content: center;
+} */
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .checkout-container {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
 }
