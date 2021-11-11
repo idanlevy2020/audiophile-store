@@ -6,12 +6,21 @@ import {useContext} from "react";
 import {CartContext} from '../../application/App'
 import Button from "../../components/Button/Button";
 import InTheBox from "../../components/InTheBox/InTheBox";
+import SummaryModal from "../../components/SummaryModal/SummaryModal";
 
 function ProductDetails(props) {
    const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart,totalPrice] = useContext(CartContext);
    const [count, setCount] = useState(0);
+   const [modalIsOpen, setModalIsOpen] = useState(false);
+   console.log('modalIsOpen:',modalIsOpen);
    const countBtn=  <button className="countBtn" onClick={() => setCount(count + 1)}> {count} </button>;
-   const addToCartBtn= <Button size="small" variant="contained" bgcolor="orange" onClick={() => (count!==0)&& addtoCart(props.product,count)}> ADD TO CART </Button>;
+   // const addToCartBtn= <Button size="small" variant="contained" bgcolor="orange" onClick={() => (count!==0)&& addtoCart(props.product,count)}> ADD TO CART </Button>;
+   const addToCartBtn= <Button size="small" variant="contained" bgcolor="orange" onClick={function(){
+      if (count!==0){
+         addtoCart(props.product,count);
+         setModalIsOpen(true);
+      } 
+   }}> ADD TO CART </Button>;
    return (
       <div className="ProductDetails">
          <div className="ProductDetails-page">
@@ -45,8 +54,19 @@ function ProductDetails(props) {
             <CategoriesShops />
             <AboutUs />     
          </div> 
-      </div> /*end Xx99Mark1*/
+         {(modalIsOpen)&&<Modal setModalIsOpen={setModalIsOpen} />}
+      </div> 
    );
 }
+
+
+function Modal(props){
+   return(
+      <div className="Modal">
+         <SummaryModal setModalIsOpen={props.setModalIsOpen} />
+      </div>
+   );
+}
+
 
 export default ProductDetails;

@@ -1,6 +1,6 @@
 import "../pages.css";
 import './Checkout.css';
-import React from 'react'
+import React from 'react';
 import Summary from "../../components/Summary/Summary";
 
 function Checkout() {
@@ -84,9 +84,6 @@ function Checkout() {
                </div>  
             </form>  
          </div>  
-         {/* <div className="checkout-part2 flex-row">
-            <Summary />  
-         </div>    */}
       </div>
    )
 }
