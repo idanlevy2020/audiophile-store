@@ -1,14 +1,12 @@
 import "./Header.css";
-import {useState} from 'react';
+import {useState, useContext} from 'react';
+import {StoreContext} from "../../contexts/StoreContext";
 import { Link } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 
-
-// checkout
-// cart
-
-function Header(props) {
-
+function Header() {
+   const value=useContext(StoreContext);
+   const countItemsCart=value.countItemsCart;
    const links = [
       { path: "/", text: "HOME" },
       { path: "/headphones", text: "HEADPHONES" },
@@ -36,7 +34,7 @@ function Header(props) {
                   <Link to={"/shoppingCart"}>
                      <button className="shoppingCartBtn" title="Shopping Cart">
                         <img src="/icons/white-24dp/outline_shopping_cart_white_24dp.png" alt="shoppingCart" />
-                        <span className="badge">{props.countItemsCart}</span>
+                        <span className="badge">{countItemsCart}</span>
                      </button>
                   </Link>
                </div>
@@ -47,12 +45,9 @@ function Header(props) {
             <Link to={"/shoppingCart"}>
                <button className="shoppingCartBtn" title="Shopping Cart">
                   <img src="/icons/white-24dp/outline_shopping_cart_white_24dp.png" alt="shoppingCart" />
-                  <span className="badge">{props.countItemsCart}</span>
+                  <span className="badge">{countItemsCart}</span>
                </button>
             </Link>
-            {/* <div className={responsive ? 'topnav responsive' : 'topnav'}>
-               <NavBar links={links}/>
-            </div> */}
          </div>
       </div>
    );

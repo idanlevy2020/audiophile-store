@@ -3,11 +3,22 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 import { Button } from "../../components/Button/Button";
 //import Button from "./Button/Button"; //export default
-import CategoriesShops from "../../components/CategoriesShops/CategoriesShops"
 import AboutUs from "../../components/AboutUs/AboutUs";
+import {useContext} from "react";
+import {StoreContext} from "../../contexts/StoreContext";
+import Product from "../../components/Product/Product";
 
-function Home(props) {
-   // const products=props.products;
+function Home() {
+   const value=useContext(StoreContext);
+   const products=value.products;
+   const productsHomePage=products.filter(result);
+
+   function result(product){
+      return ((product.id===76731)||(product.id===76734)||(product.id===76735)||(product.id===76733));
+   }
+
+   console.log('productsHomePage:',productsHomePage);
+   //Todo - improve Home and use in products array
    return (
       <div className="Home">
          <div className="Home-part1 flex-row">
@@ -26,10 +37,10 @@ function Home(props) {
          </div>
          <div className="page">
             <div className="Home-part2">
-               <CategoriesShops />
+               {/* <CategoriesShops /> */}
             </div>
-            <div className="Home-part3 flex-row">
-            <img src="/images/home/tablet/image-speaker-zx9.png" alt="speaker-zx9"/>
+            <div className="Home-part3 flex-row wrap">
+               <img src="/images/home/tablet/image-speaker-zx9.png" alt="speaker-zx9"/>
                <div className="ZX9speaker flex-column">
                   <h1>ZX9 SPEAKER</h1>
                   <p>
@@ -58,6 +69,16 @@ function Home(props) {
                      <Button bgcolor="" variant="outlined" size="small"> See product </Button>
                   </Link>
                </div>
+            </div>
+            <div className="products">
+               {productsHomePage.map((product,i) => {
+                     let whichSideImg;
+                     if (i%2===0) whichSideImg='left';
+                     else whichSideImg='right';
+                     return (
+                        <Product key={i} img={product.image} whichSideImg={whichSideImg} titleNewProduct={"NEW PRODUCT"} name={product.name} p={product.desc} btnLinkTo={product.productDetails_Link_to} />
+                     );
+               })}
             </div>
             <AboutUs />
          </div>

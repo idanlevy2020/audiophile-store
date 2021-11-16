@@ -3,11 +3,12 @@ import Product from "../components/Product/Product";
 import CategoriesShops from "../components/CategoriesShops/CategoriesShops"
 import AboutUs from "../components/AboutUs/AboutUs";
 import {useContext} from "react";
-import {CartContext} from '../application/App'
+import {StoreContext} from "../contexts/StoreContext";
 
 function Speakers() {
-   const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart,totalPrice]=useContext(CartContext);
-   // const speakers=products.speakers;
+   const value=useContext(StoreContext);
+   const products=value.products;
+   
    const speakers=products.filter(product => product.type ==="speakers");
    
    const titleNewProduct="NEW PRODUCT";

@@ -3,11 +3,13 @@ import Product from "../components/Product/Product";
 import CategoriesShops from "../components/CategoriesShops/CategoriesShops"
 import AboutUs from "../components/AboutUs/AboutUs";
 import {useContext} from "react";
-import {CartContext} from '../application/App'
+import {StoreContext} from "../contexts/StoreContext";
 
 function Headphones() {
-   const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart,totalPrice]=useContext(CartContext);
-   const headphones=products.filter(product => product.type == 'headphones');
+   const value=useContext(StoreContext);
+   const products=value.products;
+      
+   const headphones=products.filter(product => product.type === 'headphones');
 
    const titleNewProduct="NEW PRODUCT";
    return (

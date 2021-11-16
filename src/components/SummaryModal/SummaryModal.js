@@ -1,12 +1,13 @@
-import React from 'react'
 import './SummaryModal.css';
-import {useContext} from "react";
-import {CartContext} from '../../application/App'
+import React ,{useContext} from "react";
+import {StoreContext} from "../../contexts/StoreContext";
 import { Link } from "react-router-dom";
 import { Button } from "../../components/Button/Button";
 
-export default function SummaryModal(props) {
-   const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart,totalPrice] = useContext(CartContext);
+function SummaryModal(props) {
+   const value=useContext(StoreContext);
+   const cart=value.cart;
+   const totalPrice=value.totalPrice;
    return (
       <div className="SummaryModal">
          <button className="close" onClick={()=>props.setModalIsOpen(false)}>&times;</button>
@@ -35,3 +36,5 @@ export default function SummaryModal(props) {
       </div>
    )
 }
+
+export default SummaryModal;

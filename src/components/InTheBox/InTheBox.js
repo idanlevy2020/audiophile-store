@@ -1,19 +1,20 @@
 import "./InTheBox.css"
 import React from 'react'
 import {useContext} from "react";
-import {CartContext} from '../../application/App'
+import {StoreContext} from "../../contexts/StoreContext";
 
-export default function InTheBox() {
-   const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart,totalPrice] = useContext(CartContext);
+function InTheBox() {
+   const value=useContext(StoreContext);
+   const cartLength=value.cart.length;
    return (
       <div className="InTheBox">
          <h1>IN THE BOX</h1>
-         <div>{(cart.length===0) && <MessegeCartEmpty />}</div>
-         <div>{(cart.length > 0) && <ShowItemsCart cart={cart} />}</div>
+         <div>{(cartLength===0) && <MessegeCartEmpty />}</div>
+         <div>{(cartLength > 0) && <ShowItemsCart />}
+      </div>
    </div>  
    )
 }
-
 
 function MessegeCartEmpty() {
    return (
@@ -23,11 +24,13 @@ function MessegeCartEmpty() {
    );
 }
 
-function ShowItemsCart(props) {
+function ShowItemsCart() {
+   const value=useContext(StoreContext);
+   const cart=value.cart;
    return (
       <div className="ShowItemsCart flex-row">
             <div className="products">
-               {props.cart.map((item,i) => {
+               {cart.map((item,i) => {
                   return (
                      <div key={i}>
                         <p><span>{item.count}x</span> {item.name}</p>
@@ -38,3 +41,5 @@ function ShowItemsCart(props) {
       </div>
    );
 }
+
+export default InTheBox;

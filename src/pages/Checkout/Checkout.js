@@ -8,7 +8,7 @@ function Checkout() {
       <div className="Checkout">
          <div className="page checkout-part1">
          <h1 className="checkout-title">CHECKOUT</h1>
-            <form className="flex-row">
+            <form className="flex-row" onSubmit={(e) => e.preventDefault()}>
                <div className="checkout-part1">
                   <div className="col">
                      <h3 className="subtitle">BILLIG DETAILS</h3>

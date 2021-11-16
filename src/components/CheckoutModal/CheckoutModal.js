@@ -1,12 +1,14 @@
 import React from 'react'
 import './CheckoutModal.css';
 import {useContext} from "react";
-import {CartContext} from '../../application/App'
+import {StoreContext} from "../../contexts/StoreContext";
 import { Link } from "react-router-dom";
 import { Button } from "../../components/Button/Button";
 
 function CheckoutModal(props) {
-   const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart,totalPrice] = useContext(CartContext);
+   const value=useContext(StoreContext);
+   const cart=value.cart;
+   const totalPrice=value.totalPrice;
    const shipping=50;
    const vat=totalPrice*0.17;
    const grandTotalPrice=totalPrice+shipping+vat;
@@ -21,7 +23,7 @@ function CheckoutModal(props) {
          <h1 className="mainTitle"> THANK YOU FOR YOUR ORDER </h1>
          <h3 className="subTitle">You will receive an email confirmation shortly.</h3>
          <div className="items">
-            <div>{(firstItem!=undefined) && <CheckoutModalItems firstItem={firstItem} />}</div>
+            <div>{(firstItem!==undefined) && <CheckoutModalItems firstItem={firstItem} />}</div>
             {(cart.length>0) && <p> and {cart.length-1} other item(s) </p>}
          </div>
          <div className="grandTotalprice">

@@ -1,15 +1,16 @@
 import "./ProductDetails.css"
-import React, { useState } from 'react';
+import React, { useState , useContext } from 'react';
 import CategoriesShops from "../../components/CategoriesShops/CategoriesShops"
 import AboutUs from "../../components/AboutUs/AboutUs";
-import {useContext} from "react";
-import {CartContext} from '../../application/App'
 import Button from "../../components/Button/Button";
 import InTheBox from "../../components/InTheBox/InTheBox";
 import SummaryModal from "../../components/SummaryModal/SummaryModal";
+import {StoreContext} from "../../contexts/StoreContext";
 
 function ProductDetails(props) {
-   const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart,totalPrice] = useContext(CartContext);
+   const value=useContext(StoreContext);
+   const addtoCart=value.addtoCart;
+
    const [count, setCount] = useState(0);
    const [modalIsOpen, setModalIsOpen] = useState(false);
    console.log('modalIsOpen:',modalIsOpen);
@@ -17,6 +18,7 @@ function ProductDetails(props) {
    // const addToCartBtn= <Button size="small" variant="contained" bgcolor="orange" onClick={() => (count!==0)&& addtoCart(props.product,count)}> ADD TO CART </Button>;
    const addToCartBtn= <Button size="small" variant="contained" bgcolor="orange" onClick={function(){
       if (count!==0){
+         console.log('')
          addtoCart(props.product,count);
          setModalIsOpen(true);
       } 
@@ -36,7 +38,7 @@ function ProductDetails(props) {
                   </div>
                </div>
             </div>
-            <div className="ProductDetails-part2 flex-row">
+            <div className="ProductDetails-part2 wrap flex-row">
                <div className="features flex-column">
                   <h1>FEATURES</h1>
                   <p> As the headphones all others are measured against, the XX99 Mark I demonstrates over five decades of audio expertise, redefining the critical listening experience. This pair of closed-back headphones are made of industrial, aerospace-grade materials to emphasize durability at a relatively light weight of 11 oz. </p>

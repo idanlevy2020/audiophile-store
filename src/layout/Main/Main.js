@@ -7,14 +7,15 @@ import ShoppingCart from '../../pages/ShoppingCart/ShoppingCart';
 import ProductDetails from '../../pages/ProductDetails/ProductDetails';
 import Checkout from '../../pages/Checkout/Checkout';
 import {useContext} from "react";
-import {CartContext} from '../../application/App';
+import {StoreContext} from "../../contexts/StoreContext";
 import {
     Switch,
     Route,
   } from "react-router-dom";
 
 function Main() {
-    const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart,totalPrice]=useContext(CartContext);
+    const value=useContext(StoreContext);
+    const products=value.products;
     return (<div className="Main"> 
         {/* A <Switch> looks through its children <Route>s and
         renders the first one that matches the current URL. */}
@@ -23,19 +24,19 @@ function Main() {
               <Headphones />
            </Route>
           <Route exact path="/headphones/xx99mark1">
-              <ProductDetails product={products.find(product => product.id==76730)}/>
+              <ProductDetails product={products.find(product => product.id===76730)}/>
           </Route>
           <Route exact path="/headphones/xx99mark2">
-          <ProductDetails product={products.find(product => product.id==76731)}/>
+          <ProductDetails product={products.find(product => product.id===76731)}/>
           </Route>
           <Route exact path="/headphones/xx59">
-          <ProductDetails product={products.find(product => product.id==76732)}/>
+          <ProductDetails product={products.find(product => product.id===76732)}/>
           </Route>
           <Route exact path="/earphones">
               <Earphones />
           </Route>
           <Route exact path="/earphones/yx1">
-          <ProductDetails product={products.find(product => product.id==76733)}/>
+          <ProductDetails product={products.find(product => product.id===76733)}/>
           </Route>
 
 
@@ -50,10 +51,10 @@ function Main() {
               <Speakers/>
           </Route>
           <Route exact path="/speakers/zx9speaker">
-              <ProductDetails product={products.find(product => product.id==76734)}/>
+              <ProductDetails product={products.find(product => product.id===76734)}/>
           </Route>
           <Route exact path="/speakers/zx7speaker">
-               <ProductDetails product={products.find(product => product.id==76735)}/>
+               <ProductDetails product={products.find(product => product.id===76735)}/>
           </Route> 
 
 
@@ -61,7 +62,7 @@ function Main() {
               <ShoppingCart />
           </Route>
           <Route exact path="/">
-              <Home products={products}/>
+              <Home/>
           </Route>
           <Route exact path="/checkout">
               <Checkout/>

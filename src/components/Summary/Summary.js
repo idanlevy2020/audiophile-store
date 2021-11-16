@@ -1,20 +1,19 @@
 import React from 'react'
 import './Summary.css';
 import {useContext, useState} from "react";
-import {CartContext} from '../../application/App'
+import {StoreContext} from "../../contexts/StoreContext";
 import { Button } from "..//Button/Button";
 import CheckoutModal from "../../components/CheckoutModal/CheckoutModal";
 
-export default function Summary() {
-   const [products,cart,addtoCart,countItemsCart,subOneItemFromCart,removeFromCart,totalPrice] = useContext(CartContext);
-   const [modalIsOpen2, setModalIsOpen2] = useState(false);
-   // console.log('modalIsOpen:',modalIsOpen);
+function Summary() {
+   const value=useContext(StoreContext);
+   const cart=value.cart;
+   const totalPrice=value.totalPrice;
+   const [modalIsOpen, setModalIsOpen] = useState(false);
    const shipping=50;
    const vat=totalPrice*0.17;
    const grandTotalPrice=totalPrice+shipping+vat;
-   const continuePayBtn = <Button size="small" variant="contained" bgcolor="orange" onClick={function(){
-      setModalIsOpen2(true)
-   }}> CONTINUE AND PAY </Button>;
+   const continuePayBtn = <Button size="small" variant="contained" bgcolor="orange" onClick={()=>setModalIsOpen(true)}> CONTINUE AND PAY </Button>;
    return (
       <div className="Summary">
          <h3>SUMMARY</h3>
@@ -49,11 +48,10 @@ export default function Summary() {
                <h3>${grandTotalPrice}</h3>
             </div>
             {continuePayBtn}
-            {(modalIsOpen2)&&<Modal setModalIsOpen={setModalIsOpen2} />}
+            {(modalIsOpen)&&<Modal setModalIsOpen={setModalIsOpen} />}
       </div>
    )
 }
-
 
 function Modal(props){
    return(
@@ -62,3 +60,5 @@ function Modal(props){
       </div>
    );
 }
+
+export default Summary;
