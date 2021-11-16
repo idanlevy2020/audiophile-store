@@ -13,16 +13,20 @@ function ProductDetails(props) {
 
    const [count, setCount] = useState(0);
    const [modalIsOpen, setModalIsOpen] = useState(false);
-   console.log('modalIsOpen:',modalIsOpen);
-   const countBtn=  <button className="countBtn" onClick={() => setCount(count + 1)}> {count} </button>;
-   // const addToCartBtn= <Button size="small" variant="contained" bgcolor="orange" onClick={() => (count!==0)&& addtoCart(props.product,count)}> ADD TO CART </Button>;
-   const addToCartBtn= <Button size="small" variant="contained" bgcolor="orange" onClick={function(){
+
+   function openModal(){
       if (count!==0){
-         console.log('')
          addtoCart(props.product,count);
          setModalIsOpen(true);
       } 
-   }}> ADD TO CART </Button>;
+   }
+
+   function closeModal(e) {
+      if(e.target.className === "Modal") {
+         setModalIsOpen(false);
+      }
+   }
+
    return (
       <div className="ProductDetails">
          <div className="ProductDetails-page">
@@ -33,8 +37,11 @@ function ProductDetails(props) {
                   <p>{props.product.desc}</p>
                   <h2>${props.product.price}</h2>
                   <div className="ProductDetails-part1-productDetails-btns flex-row">
-                     {countBtn}
-                     {addToCartBtn}
+                     <button className="countBtn" onClick={() => setCount(count + 1)}> {count} </button>;
+                     <Button size="small" variant="contained" bgcolor="orange" onClick={()=>openModal()}> ADD TO CART </Button>
+                     {(modalIsOpen)&&<div className="Modal" id="modal" onClick={(e) => closeModal(e)}>
+                        <SummaryModal setModalIsOpen={props.setModalIsOpen} />
+                     </div> }
                   </div>
                </div>
             </div>
@@ -56,19 +63,11 @@ function ProductDetails(props) {
             <CategoriesShops />
             <AboutUs />     
          </div> 
-         {(modalIsOpen)&&<Modal setModalIsOpen={setModalIsOpen} />}
+         {/* {(modalIsOpen)&&<Modal setModalIsOpen={setModalIsOpen} />} */}
       </div> 
    );
 }
 
-
-function Modal(props){
-   return(
-      <div className="Modal">
-         <SummaryModal setModalIsOpen={props.setModalIsOpen} />
-      </div>
-   );
-}
 
 
 export default ProductDetails;

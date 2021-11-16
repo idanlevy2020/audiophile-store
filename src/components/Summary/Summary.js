@@ -2,7 +2,7 @@ import React from 'react'
 import './Summary.css';
 import {useContext, useState} from "react";
 import {StoreContext} from "../../contexts/StoreContext";
-import { Button } from "..//Button/Button";
+import { Button } from "../Button/Button";
 import CheckoutModal from "../../components/CheckoutModal/CheckoutModal";
 
 function Summary() {
@@ -11,9 +11,15 @@ function Summary() {
    const totalPrice=value.totalPrice;
    const [modalIsOpen, setModalIsOpen] = useState(false);
    const shipping=50;
-   const vat=totalPrice*0.17;
+   const vat=Math.round(totalPrice*0.17);
    const grandTotalPrice=totalPrice+shipping+vat;
-   const continuePayBtn = <Button size="small" variant="contained" bgcolor="orange" onClick={()=>setModalIsOpen(true)}> CONTINUE AND PAY </Button>;
+   
+   function closeModal(e) {
+      if(e.target.className === "Modal") {
+         setModalIsOpen(false);
+      }
+   }
+
    return (
       <div className="Summary">
          <h3>SUMMARY</h3>
@@ -47,18 +53,15 @@ function Summary() {
                <p>GRAND TOTAL:</p>
                <h3>${grandTotalPrice}</h3>
             </div>
-            {continuePayBtn}
-            {(modalIsOpen)&&<Modal setModalIsOpen={setModalIsOpen} />}
+            <Button size="small" variant="contained" bgcolor="orange" onClick={()=>setModalIsOpen(true)}> CONTINUE AND PAY </Button>
+            {(modalIsOpen)&&<div className="Modal" onClick={(e) => closeModal(e)}>
+               <CheckoutModal setModalIsOpen={setModalIsOpen} />
+            </div> }
+
       </div>
    )
 }
 
-function Modal(props){
-   return(
-      <div className="Modal">
-         <CheckoutModal setModalIsOpen={props.setModalIsOpen} />
-      </div>
-   );
-}
+
 
 export default Summary;
