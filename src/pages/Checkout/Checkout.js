@@ -13,16 +13,16 @@ function Checkout() {
                   <div className="col">
                      <h3 className="subtitle">BILLIG DETAILS</h3>
                      <div className="box">
-                        <label htmlFor="fname"> Name</label>
-                        <input type="text" id="fname" name="firstname" placeholder="John M. Doe"/>
+                        <label htmlFor="fname"> Name *</label>
+                        <input type="text" id="fname" name="firstname" placeholder="John M. Doe" required/>
                      </div>
                      <div className="box">
                         <label htmlFor="email"> Email Address</label>
-                        <input type="text" id="email" name="email" placeholder="john@example.com"/>                    
+                        <input type="text" id="email" name="email" placeholder="john@example.com" required/>                    
                      </div>
                      <div className="box">
                         <label htmlFor="phone"> Phone Number</label>
-                        <input type="text" id="phone" name="phone" placeholder="+1 202-555-0136"/>
+                        <input type="text" id="phone" name="phone" placeholder="+1 202-555-0136" required/>
                      </div>
                   </div>
                   <div className="col">
@@ -59,23 +59,23 @@ function Checkout() {
                      </div>
                      <div className="box">
                         <label htmlFor="cname">Name on Card</label>
-                        <input type="text" id="cname" name="cardname" placeholder="John More Doe"/>             
+                        <input type="text" id="cname" name="cardname" placeholder="John More Doe" required/>             
                      </div>
                      <div className="box">
                         <label htmlFor="ccnum">Credit card number</label>
-                        <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"/>
+                        <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required/>
                      </div>
                      <div className="box">
                         <label htmlFor="expmonth">Exp Month</label>
-                        <input type="text" id="expmonth" name="expmonth" placeholder="September"/>
+                        <input type="text" id="expmonth" name="expmonth" placeholder="September" required/>
                      </div>
                      <div className="box">
                         <label htmlFor="expyear">Exp Year</label>
-                        <input type="text" id="expyear" name="expyear" placeholder="2026"/>
+                        <input type="text" id="expyear" name="expyear" placeholder="2026" required/>
                      </div>
                      <div className="box">
                         <label htmlFor="cvv">CVV</label>
-                        <input type="text" id="cvv" name="cvv" placeholder="352"/>
+                        <input type="text" id="cvv" name="cvv" placeholder="352" required/>
                      </div>
                   </div>
                </div>
