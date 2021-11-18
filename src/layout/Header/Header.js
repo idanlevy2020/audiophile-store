@@ -21,33 +21,32 @@ function Header() {
       //take current value of responsive and flip it
       setResponsive(prev => !prev);
     }
+
+    console.log('responsive:',responsive);
    
    return (
       <div className="Header">
-         <div className="Header-container flex-row">
-            <div className="flex-row">
-               <a className='icon' onClick={toggleResponsive}>
+         <div className="Header-part1 flex-row">
+            <div className="ToggleBarAndTitle flex-row">
+               <a className='iconToggleBar' onClick={toggleResponsive}>
                   <i className="fa fa-bars"></i>
                </a>
                <h2>audiophile</h2>
-               <div className={responsive ? 'shoppingCart responsive' : 'shoppingCart'}>
-                  <Link to={"/shoppingCart"}>
-                     <button className="shoppingCartBtn" title="Shopping Cart">
-                        <img src="/icons/white-24dp/outline_shopping_cart_white_24dp.png" alt="shoppingCart" />
-                        <span className="badge">{countItemsCart}</span>
-                     </button>
-                  </Link>
-               </div>
             </div>
-            <div className={responsive ? 'topnav responsive' : 'topnav'}>
+            <div className="topnav">
                <NavBar links={links}/>
             </div>
-            <Link to={"/shoppingCart"}>
-               <button className="shoppingCartBtn" title="Shopping Cart">
-                  <img src="/icons/white-24dp/outline_shopping_cart_white_24dp.png" alt="shoppingCart" />
-                  <span className="badge">{countItemsCart}</span>
-               </button>
-            </Link>
+            <div className='shoppingCart'>
+               <Link to={"/shoppingCart"}>
+                  <button className="shoppingCartBtn" title="Shopping Cart">
+                     <img src="/icons/white-24dp/outline_shopping_cart_white_24dp.png" alt="shoppingCart" />
+                     <span className="badge">{countItemsCart}</span>
+                  </button>
+               </Link>
+            </div>
+         </div>
+         <div className="Header-part2">
+            {(responsive)&&<NavBar links={links}/>}
          </div>
       </div>
    );
