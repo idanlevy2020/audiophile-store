@@ -10,15 +10,11 @@
   margin: 0px 50px;
 }
 
-.ToggleBarAndTitle{
-  min-width: 150px;
+/* .ToggleBarAndTitle{
+  width: 150px;
   justify-content: space-between;
   align-items: center;
-}
-
-.ToggleBarAndTitle > .iconToggleBar{
-  display:none;
-}
+} */
 
 .Header-part1 > .topnav{
 
@@ -64,6 +60,18 @@
 .Header-part2{
   display:block;
 }
+
+.responsive{
+  display:block;
+}
+
+.ToggleBarAndTitle{
+  width: 25px;
+}
+
+.ToggleBarAndTitle h2{
+  display:none;
+}
   
 
 .ToggleBarAndTitle > .iconToggleBar{
@@ -88,4 +96,7 @@
 
 @media screen and (min-width: 375px) and (max-width: 620px) {
   /* For mobile phones: */
+  .Header-part1 > h2{
+    font-size: 30px;
+  }
 }

@@ -28,11 +28,12 @@ function Header() {
       <div className="Header">
          <div className="Header-part1 flex-row">
             <div className="ToggleBarAndTitle flex-row">
-               <a className='iconToggleBar' onClick={toggleResponsive}>
+               <a className='iconToggleBar responsive' onClick={toggleResponsive}>
                   <i className="fa fa-bars"></i>
                </a>
                <h2>audiophile</h2>
             </div>
+            <h2 className="responsive">audiophile</h2>
             <div className="topnav">
                <NavBar links={links}/>
             </div>
@@ -45,7 +46,7 @@ function Header() {
                </Link>
             </div>
          </div>
-         <div className="Header-part2">
+         <div className="Header-part2 responsive">
             {(responsive)&&<NavBar links={links}/>}
          </div>
       </div>
