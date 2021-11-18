@@ -7,8 +7,9 @@ function NavBar(props) {
       <div className="NavBar">
          <ul>
             {links.map((link,i) => {
+               let classname="link"+(i+1);
                return (
-                  <li className="link" key={i}>
+                  <li className={classname} key={i}>
                      <Link to={link.path}>{link.text}</Link>
                   </li>
                );

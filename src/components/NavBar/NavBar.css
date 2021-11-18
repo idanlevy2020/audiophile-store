@@ -1,10 +1,3 @@
-/* .NavBar{
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
- } */
-
- 
  .NavBar > ul {
     display:flex;
     flex-direction: row;
@@ -13,14 +6,15 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #101010;
+    width:420px;
+    padding: 16px 0px;
+    /* background-color: #101010; */
   }
    
    .NavBar > ul > li > a {
      display: block;
      color: white;
      text-align: center;
-     padding: 14px 16px;
      text-decoration: none;
    }
  
