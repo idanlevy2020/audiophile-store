@@ -30,9 +30,6 @@ function Checkout() {
 
    let flagFormFilled = !Object.values(formDetails).some(value => value === '');
 
-   // console.log('formDetails:',formDetails);
-   console.log('flagFormFilled',flagFormFilled);
-
    return (
       <div className="Checkout">
          <div className="page checkout-part1">
