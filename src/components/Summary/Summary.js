@@ -5,7 +5,7 @@ import {StoreContext} from "../../contexts/StoreContext";
 import { Button } from "../Button/Button";
 import CheckoutModal from "../../components/CheckoutModal/CheckoutModal";
 
-function Summary() {
+function Summary(props) {
    const value=useContext(StoreContext);
    const cart=value.cart;
    const totalPrice=value.totalPrice;
@@ -13,6 +13,12 @@ function Summary() {
    const shipping=50;
    const vat=Math.round(totalPrice*0.17);
    const grandTotalPrice=totalPrice+shipping+vat;
+   
+   function openModal() {
+      if (props.flagFormFilled){
+         setModalIsOpen(true);
+      }
+   }
    
    function closeModal(e) {
       if(e.target.className === "Modal") {
@@ -53,7 +59,7 @@ function Summary() {
                <p>GRAND TOTAL:</p>
                <h3>${grandTotalPrice}</h3>
             </div>
-            <Button size="small" variant="contained" bgcolor="orange" onClick={()=>setModalIsOpen(true)}> CONTINUE AND PAY </Button>
+            <Button size="small" variant="contained" bgcolor="orange" onClick={()=>openModal()}> CONTINUE AND PAY </Button>
             {(modalIsOpen)&&<div className="Modal" onClick={(e) => closeModal(e)}>
                <CheckoutModal setModalIsOpen={setModalIsOpen} />
             </div> }
