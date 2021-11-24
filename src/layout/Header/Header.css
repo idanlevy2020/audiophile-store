@@ -1,27 +1,25 @@
 .Header{
   background-color: #101010;
   color:white;
+  height: 97px;
 }
 
-.Header-part1 {
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 10px;
-  margin: 0px 50px;
+/**************** For mobile phones: ****************/
+.Header-container {
+  padding: 0px 24px;
+  width: 100%; 
+  height: 100%;
+   justify-content: space-between;
+  align-items: center; 
 }
 
-/* .ToggleBarAndTitle{
-  width: 150px;
-  justify-content: space-between;
-  align-items: center;
-} */
-
-.Header-part1 > .topnav{
-
+.Header .NavBar{
+  background-color: #101010;
+  padding: 0px 24px 16px 24px;
 }
 
-.Header-part2{
-  display:none;
+.Header > .NavBar-option-column > .NavBar > ul li a{
+  text-align: left;
 }
 
 
@@ -52,51 +50,46 @@
   color: white;
 }
 
-@media screen and (max-width: 767px) {
-.Header-part1 > .topnav{
-  display: none;
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .Header-container {
+    padding: 0px 39px;
+  }
+
+  .ToggleBarAndTitle{
+    width: 210px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ToggleBarAndTitle > h2{
+    display:block;
+  }
+
+  .Header-container > h2 {
+    display:none;
+  }
 }
 
-.Header-part2{
-  display:block;
-}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .Header-container {
+    padding: 0px 50px;
+  }
 
-.responsive{
-  display:block;
-}
+  .Header-container .NavBar-option-row{
+    display: block;
+  }
 
-.ToggleBarAndTitle{
-  width: 25px;
-}
+  .Header-container .NavBar-option-column{
+    display: none;
+  }
 
-.ToggleBarAndTitle h2{
-  display:none;
-}
-  
+  .ToggleBarAndTitle{
+    display: none;
+  }
 
-.ToggleBarAndTitle > .iconToggleBar{
-  display:block;
-}
-
-.Header-part2 > .NavBar{
-  margin-left: 50px;
-}
-
-.Header-part2 > .NavBar > ul {
-  display:flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.Header-part2 > .NavBar > ul li a{
-  text-align: left;
-}
-}
-
-
-@media screen and (min-width: 375px) and (max-width: 620px) {
-  /* For mobile phones: */
-  .Header-part1 > h2{
-    font-size: 30px;
+  .Header-container > h2 {
+    display:block;
   }
 }

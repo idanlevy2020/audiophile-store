@@ -26,16 +26,16 @@ function Header() {
    
    return (
       <div className="Header">
-         <div className="Header-part1 flex-row">
+         <div className="Header-container flex-row">
             <div className="ToggleBarAndTitle flex-row">
-               <a className='iconToggleBar responsive' onClick={toggleResponsive}>
+               <a className="iconToggleBar" onClick={toggleResponsive}>
                   <i className="fa fa-bars"></i>
                </a>
-               <h2>audiophile</h2>
+               <h2 className="displayNone">audiophile</h2>
             </div>
-            <h2 className="responsive">audiophile</h2>
-            <div className="topnav">
-               <NavBar links={links}/>
+            <h2>audiophile</h2>
+            <div className="NavBar-option-row displayNone">
+               <NavBar links={links} flex={"flex-row"}/>
             </div>
             <div className='shoppingCart'>
                <Link to={"/shoppingCart"}>
@@ -46,8 +46,8 @@ function Header() {
                </Link>
             </div>
          </div>
-         <div className="Header-part2 responsive">
-            {(responsive)&&<NavBar links={links}/>}
+         <div className="NavBar-option-column">
+            {(responsive)&&<NavBar links={links} flex={"flex-column"}/>}
          </div>
       </div>
    );
