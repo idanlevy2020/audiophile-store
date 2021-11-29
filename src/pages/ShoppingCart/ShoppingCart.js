@@ -11,12 +11,12 @@ function ShoppingCart() {
    let history = useHistory();
    return (
       <div className="ShoppingCart">
-         <div className="title">
+         <div className="ShoppingCartContent">
+            <button className="GoBackBtn" onClick={history.goBack}>Go Back</button>
             <h1>Your Shopping Cart</h1>
+            {(cartLength===0) && <MessegeForCartEmpty />}
+            {(cartLength > 0) && <ShoppingCartItems />}
          </div>
-         <button className="GoBackBtn" onClick={history.goBack}>Go Back</button>
-         <div>{(cartLength===0) && <MessegeForCartEmpty />}</div>
-         <div>{(cartLength > 0) && <ShoppingCartItems />}</div>
       </div>
    );
 }
@@ -25,7 +25,7 @@ function MessegeForCartEmpty() {
    return (
       <div className="MessegeForCartEmpty page">
          <img src="images/shoppingcart/shopingcart.jpg" alt="ShoppingBagCart" />
-         <p> Your shopping cart is empty</p>
+         <p> Your Shopping Cart is Empty</p>
          <Link to={"/"}>
             <Button size="small" variant="contained" bgcolor="orange">Continue Shopping</Button>
          </Link>
@@ -64,14 +64,18 @@ function ShowItemsInCart(props) {
    const removeFromCart=value.removeFromCart;
    return (
       <div className="ShowItemsInCart flex-row" key={props.i}>
-         {props.item.image}
-         <h3>{props.item.name}</h3>
-         <h3>${props.item.price}</h3>
-         <h3>Count ({props.item.count})</h3>
-         <h3>price total: ${props.item.price*props.item.count}</h3>
-         <Button bgcolor="black" variant="contained" size="small" onClick={() => subOneItemFromCart(props.item)}> - </Button>
-         <Button bgcolor="black" variant="contained" size="small" onClick={() => addtoCart(props.item,1)}> + </Button>
-         <Button bgcolor="black" variant="contained" size="small" onClick={() => removeFromCart(props.item)}> Remove </Button>
+         <img src={props.item.imagePathMobile} alt={props.item.name} />
+         <div className="ShowItemsInCart-content flex-column">
+            <p className="itemName">{props.item.name}</p>
+            <p>${props.item.price}</p>
+            <div className="buttonsCountContainer flex-row">
+               <button onClick={() => subOneItemFromCart(props.item)}> - </button>
+               <p>{props.item.count}</p>
+               <button onClick={() => addtoCart(props.item,1)}> + </button>
+            </div>
+            <p>price total: ${props.item.price*props.item.count}</p>
+         </div>
+         <button className="removeBtn" onClick={() => removeFromCart(props.item)}> X </button>
       </div>
    );
 }
