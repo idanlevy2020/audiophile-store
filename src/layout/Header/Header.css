@@ -1,16 +1,28 @@
+/**************** For mobile phones: ****************/
 .Header{
   background-color: #101010;
   color:white;
-  height: 97px;
 }
 
-/**************** For mobile phones: ****************/
 .Header-container {
   padding: 0px 24px;
   width: 100%; 
   height: 100%;
-   justify-content: space-between;
+}
+
+.Header-part1{
+  height: 97px; 
+  justify-content: space-between;
   align-items: center; 
+}
+
+.Header-part1 .logo{
+  color: white;
+  font-size:28px;
+  font-weight: bold;
+  text-decoration: none;
+  border:none;
+  background-color: #101010;
 }
 
 .Header .NavBar{
@@ -18,10 +30,16 @@
   padding: 0px 24px 16px 24px;
 }
 
-.Header > .NavBar-option-column > .NavBar > ul li a{
-  text-align: left;
+.topnavBtn{
+  background-color: #101010;
+  color:white;
+  border:none;
+  font-size: larger;
 }
 
+/* .Header > .NavBar-option-column > .NavBar > ul li a{
+  text-align: left;
+} */
 
 /******************* .shoppingCartBtn *******************************/
 .shoppingCartBtn {
@@ -56,17 +74,17 @@
     padding: 0px 39px;
   }
 
-  .ToggleBarAndTitle{
+  .topnav-responsive-and-logo{
     width: 210px;
     justify-content: space-between;
     align-items: center;
   }
 
-  .ToggleBarAndTitle > h2{
+  .topnav-responsive-and-logo > .logo{
     display:block;
-  }
+  } 
 
-  .Header-container > h2 {
+   .Header-part1> .logo {
     display:none;
   }
 }
@@ -85,11 +103,15 @@
     display: none;
   }
 
-  .ToggleBarAndTitle{
+  .topnav-responsive-and-logo{
     display: none;
   }
 
-  .Header-container > h2 {
+  .Header-part1 .logo{
     display:block;
+  } 
+
+  .topnav-content-responsive{
+    display: none;
   }
 }

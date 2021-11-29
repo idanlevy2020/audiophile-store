@@ -2,6 +2,7 @@ import "./Header.css";
 import {useState, useContext} from 'react';
 import {StoreContext} from "../../contexts/StoreContext";
 import { Link } from "react-router-dom";
+// import Button from "../../components/Button/Button";
 import NavBar from "../../components/NavBar/NavBar";
 
 function Header() {
@@ -19,35 +20,36 @@ function Header() {
 
    const toggleResponsive = () => {
       //take current value of responsive and flip it
-      setResponsive(prev => !prev);
-    }
+      if (responsive) setResponsive(false);
+      else setResponsive(true);
+   }
 
-    console.log('responsive:',responsive);
-   
    return (
       <div className="Header">
-         <div className="Header-container flex-row">
-            <div className="ToggleBarAndTitle flex-row">
-               <a className="iconToggleBar" onClick={toggleResponsive}>
-                  <i className="fa fa-bars"></i>
-               </a>
-               <h2 className="displayNone">audiophile</h2>
+         <div className="Header-container">
+            <div className="Header-part1 flex-row">
+               <div className="topnav-responsive-and-logo flex-row">
+                  <div className="topnav-responsive">
+                     <button className="topnavBtn" onClick={toggleResponsive}>&#9776;</button>
+                  </div>
+                  <Link to={"/"} className="logo displayNone">audiophile</Link>  
+               </div>
+               <Link to={"/"} className="logo">audiophile</Link>            
+               <div className="NavBar-option-row displayNone">
+                  <NavBar links={links} flex={"flex-row"}/>
+               </div>
+               <div className='shoppingCart'>
+                  <Link to={"/shoppingCart"}>
+                     <button className="shoppingCartBtn" title="Shopping Cart">
+                        <img src="/icons/white-24dp/outline_shopping_cart_white_24dp.png" alt="shoppingCart" />
+                        <span className="badge">{countItemsCart}</span>
+                     </button>
+                  </Link>
+               </div>
             </div>
-            <h2>audiophile</h2>
-            <div className="NavBar-option-row displayNone">
-               <NavBar links={links} flex={"flex-row"}/>
-            </div>
-            <div className='shoppingCart'>
-               <Link to={"/shoppingCart"}>
-                  <button className="shoppingCartBtn" title="Shopping Cart">
-                     <img src="/icons/white-24dp/outline_shopping_cart_white_24dp.png" alt="shoppingCart" />
-                     <span className="badge">{countItemsCart}</span>
-                  </button>
-               </Link>
-            </div>
-         </div>
-         <div className="NavBar-option-column">
-            {(responsive)&&<NavBar links={links} flex={"flex-column"}/>}
+            {(responsive)&&<div className="Header-part2 topnav-content-responsive"> 
+               <NavBar links={links} flex={"flex-column"}/>
+            </div>}
          </div>
       </div>
    );
