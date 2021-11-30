@@ -2,7 +2,7 @@
 /**************** For mobile phones: ****************/
 .AboutUs{
    background-color: white;
-   height: 588px;
+   height: auto;
    text-align: center;
    align-items: center;
 }
