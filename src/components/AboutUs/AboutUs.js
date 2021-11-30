@@ -2,7 +2,7 @@ import "./AboutUs.css";
 
 function AboutUs() {
    return (
-      <div className="AboutUs">
+      <div className="AboutUs flex-column">
          <picture>
             <source media="(max-width: 768px)" srcSet="/images/shared/tablet/image-best-gear.jpg" />
             <source media="(max-width: 600px)" srcSet="/images/shared/mobile/image-best-gear.jpg" />
