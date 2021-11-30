@@ -2,12 +2,14 @@ import "./AboutUs.css";
 
 function AboutUs() {
    return (
-      <div className="AboutUs flex-row">
+      <div className="AboutUs">
+         <picture>
+            <source media="(max-width: 768px)" srcSet="/images/shared/tablet/image-best-gear.jpg" />
+            <source media="(max-width: 600px)" srcSet="/images/shared/mobile/image-best-gear.jpg" />
+            <img src="/images/shared/desktop/image-best-gear.jpg" alt="imageBestGear" />
+         </picture>
          <div className="AboutUs-text flex-column">
-            <h1>
-               BRINGING YOU THE <span style={{ color: "#d87d4a" }}>BEST</span>
-               AUDIO GEAR
-            </h1>
+            <h1> BRINGING YOU THE <span> BEST </span> AUDIO GEAR </h1>
             <p>
                Located at the heart of New York City, Audiophile is the premier
                store for high end headphones, earphones, speakers, and audio
@@ -18,10 +20,6 @@ function AboutUs() {
                audio equipment
             </p>
          </div>
-         <img
-            src="/images/shared/desktop/image-best-gear.jpg"
-            alt="imageBestGear"
-         />
       </div> /* end AboutUs */
    );
 }
