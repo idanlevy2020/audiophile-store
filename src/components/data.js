@@ -5,14 +5,10 @@ const data = [
       name: "XX99 Mark I Headphone",
       desc: "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
       price: "1750",
-      image: (
-         <img
-            src="/images/category-headphones/desktop/image-xx99-mark-one.jpg"
-            alt="xx99Mark1"
-         />
-      ),
-      productDetails_Link_to: "/headphones/xx99mark1",
-      // btnProductDetails: <Link to={"/headphones/xx99mark1"}>{btn}</Link>,
+      imagePath: "/images/category-headphones/desktop/image-xx99-mark-one.jpg",
+      imagePathDesktop: "/images/category-headphones/desktop/image-xx99-mark-one.jpg",
+      imagePathMobile: "/images/category-headphones/mobile/image-xx99-mark-one.jpg",
+      imagePathTablet: "/images/category-headphones/tablet/image-xx99-mark-one.jpg",
    },
    {
       id: 76731,
@@ -20,13 +16,10 @@ const data = [
       name: "XX99 Mark II Headphone",
       desc: "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
       price: "1800",
-      image: (
-         <img
-            src="/images/category-headphones/desktop/image-xx99-mark-two.jpg"
-            alt="xx99Mark2"
-         />
-      ),
-      productDetails_Link_to: "/headphones/xx99mark2",
+      imagePath: "/images/category-headphones/desktop/image-xx99-mark-two.jpg",
+      imagePathDesktop: "/images/category-headphones/desktop/image-xx99-mark-two.jpg",
+      imagePathMobile: "/images/category-headphones/mobile/image-xx99-mark-two.jpg",
+      imagePathTablet: "/images/category-headphones/tablet/image-xx99-mark-two.jpg",
    },
    {
       id: 76732,
@@ -34,41 +27,32 @@ const data = [
       name: "XX59 Headphones",
       desc: "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
       price: "1600",
-      image: (
-         <img
-            src="/images/category-headphones/desktop/image-xx59.jpg"
-            alt="xx59"
-         />
-      ),
-      productDetails_Link_to: "/headphones/xx59",
+      imagePath: "/images/category-headphones/desktop/image-xx59.jpg",
+      imagePathDesktop: "/images/category-headphones/desktop/image-xx59.jpg",
+      imagePathMobile: "/images/category-headphones/mobile/image-xx59.jpg",
+      imagePathTablet: "/images/category-headphones/tablet/image-xx59.jpg",
    },
    {
       id: 76733,
       type: "earphones",
-      name: "YX1 wireless earphones",
+      name: "YX1 WIRELESS EARPHONES",
       desc: "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
       price: "1500",
-      image: (
-         <img
-            src="/images/category-earphones/desktop/image-yx1-earphones.jpg"
-            alt="YX1Wireless"
-         />
-      ),
-      productDetails_Link_to: "/earphones/yx1",
+      imagePath: "/images/category-earphones/desktop/image-yx1-earphones.jpg",
+      imagePathDesktop: "/images/category-earphones/desktop/image-yx1-earphones.jpg",
+      imagePathMobile: "/images/category-earphones/mobile/image-yx1-earphones.jpg",
+      imagePathTablet: "/images/category-earphones/tablet/image-yx1-earphones.jpg",
    },
    {
       id: 76734,
       type: "speakers",
       name: "ZX9 speaker",
-      desc: "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
+      desc: "Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
       price: "1600",
-      image: (
-         <img
-            src="/images/category-speakers/desktop/image-zx9.jpg"
-            alt="ZX9Speaker"
-         />
-      ),
-      productDetails_Link_to: "/speakers/zx9speaker",
+      imagePath: "/images/category-speakers/desktop/image-zx9.jpg",
+      imagePathDesktop: "/images/category-speakers/desktop/image-zx9.jpg",
+      imagePathMobile: "/images/category-speakers/mobile/image-zx9.jpg",
+      imagePathTablet: "/images/category-speakers/tablet/image-zx9.jpg",
    },
    {
       id: 76735,
@@ -76,13 +60,10 @@ const data = [
       name: "ZX7 speaker",
       desc: "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
       price: "1800",
-      image: (
-         <img
-            src="/images/category-speakers/desktop/image-zx7.jpg"
-            alt="ZX7Speaker"
-         />
-      ),
-      productDetails_Link_to: "/speakers/zx7speaker",
+      imagePath: "/images/category-speakers/desktop/image-zx7.jpg",
+      imagePathDesktop: "/images/category-speakers/desktop/image-zx7.jpg",
+      imagePathMobile: "/images/category-speakers/mobile/image-zx7.jpg",
+      imagePathTablet: "/images/category-speakers/tablet/image-zx7.jpg",
    },
 ];
 
