@@ -47,7 +47,7 @@ function CheckoutModal(props) {
 function CheckoutModalItems(props) {
    return (
       <div className="CheckoutModalItems item flex-row">
-         {props.item.image}
+         <img src={props.item.imagePathMobile} alt={props.item.name} />
          <div className="itemDetails flex-column">
             <span className="itemName">{props.item.name}</span>
             <span className="itemPrice">${props.item.price}</span>

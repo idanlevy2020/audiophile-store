@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Button } from "../../components/Button/Button";
 
 function SummaryModal(props) {
+   console.log('in SummaryMoadl propsare:',props);
    const value=useContext(StoreContext);
    const cart=value.cart;
    const totalPrice=value.totalPrice;
@@ -16,7 +17,7 @@ function SummaryModal(props) {
                {cart.map((item,i) => {
                   return (
                      <div className="item flex-row" key={i}>
-                        {item.image}
+                        <img src={item.imagePathMobile} alt={item.name} />
                         <div className="itemDetails flex-column">
                            <span className="itemName">{item.name}</span>
                            <span className="itemPrice">${item.price}</span>
