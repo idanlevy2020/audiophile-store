@@ -9,19 +9,10 @@ function InTheBox() {
    return (
       <div className="InTheBox">
          <h1>IN THE BOX</h1>
-         <div>{(cartLength===0) && <MessegeCartEmpty />}</div>
-         <div>{(cartLength > 0) && <ShowItemsCart />}
+         {(cartLength===0) && <p> Your shopping bag is empty </p>}
+         {(cartLength > 0) && <ShowItemsCart />}
       </div>
-   </div>  
    )
-}
-
-function MessegeCartEmpty() {
-   return (
-      <div className="MessegeForCartEmpty">
-         <p> Your shopping bag is empty </p>
-      </div>
-   );
 }
 
 function ShowItemsCart() {
