@@ -1,7 +1,7 @@
 .btn {
    border: none;
    cursor: pointer;
-   text-transform: uppercase;
+   /* text-transform: uppercase; */
    --color: black;
 }
 /* colors */
@@ -34,7 +34,7 @@
 }
 
 .btn.outlined:hover {
-   /* border: 1px solid var(--color); */
+   border: none;
    color:white;
    background-color: black;
 }
