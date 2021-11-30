@@ -1,31 +1,25 @@
 import "./pages.css";
 import Product from "../components/Product/Product";
-import CategoriesShops from "../components/CategoriesShops/CategoriesShops"
+import CategoriesShops from "../components/CategoriesShops/CategoriesShops";
 import AboutUs from "../components/AboutUs/AboutUs";
-import {useContext} from "react";
-import {StoreContext} from "../contexts/StoreContext";
+import { useContext } from "react";
+import { StoreContext } from "../contexts/StoreContext";
 
 function Headphones() {
-   const value=useContext(StoreContext);
-   const products=value.products;
-      
-   const headphones=products.filter(product => product.type === 'headphones');
-
-   const titleNewProduct="NEW PRODUCT";
+   const value = useContext(StoreContext);
+   const products = value.products;
+   const headphones = products.filter((product) => product.type === "headphones");
    return (
       <div className="Headphones">
-         <div className="title">
+         <div className="page-title">
             <h1>HEADPHONES</h1>
          </div>
-         <div className="page">
+         <div className="page-content">
             <div className="products">
-               {headphones.map((headphone,i) => {
-                     let whichSideImg;
-                     if (i%2===0) whichSideImg='left';
-                     else whichSideImg='right';
-                     return (
-                        <Product key={i} img={headphone.image} whichSideImg={whichSideImg} titleNewProduct={titleNewProduct} name={headphone.name} p={headphone.desc} price={headphone.price} btnLinkTo={headphone.productDetails_Link_to} />
-                     );
+               {headphones.map((headphone, i) => {
+                  return (
+                     <Product product={headphone} key={i} className={i % 2 ? "flex-row-reverse" : "flex-row"}/>
+                  );
                })}
             </div>
             <CategoriesShops />

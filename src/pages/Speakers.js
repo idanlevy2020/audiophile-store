@@ -6,29 +6,23 @@ import {useContext} from "react";
 import {StoreContext} from "../contexts/StoreContext";
 
 function Speakers() {
-   const value=useContext(StoreContext);
-   const products=value.products;
-   
-   const speakers=products.filter(product => product.type ==="speakers");
-   
-   const titleNewProduct="NEW PRODUCT";
+   const value = useContext(StoreContext);
+   const products = value.products;
+   const speakers = products.filter((product) => product.type === "speakers");
    return (
       <div className="Speakers">
-         <div className="title">
+         <div className="page-title">
             <h1>SPEAKERS</h1>
          </div>
-         <div className="page">
+         <div className="page-content">
             <div className="products">
-               {speakers.map((speaker,i) => {
-                     let whichSideImg;
-                     if (i%2===0) whichSideImg='left';
-                     else whichSideImg='right';
-                     return (
-                        <Product key={i} img={speaker.image} whichSideImg={whichSideImg} titleNewProduct={titleNewProduct} name={speaker.name} p={speaker.desc} price={speaker.price} btnLinkTo={speaker.productDetails_Link_to} />
-                     );
+               {speakers.map((speaker, i) => {
+                  return (
+                     <Product product={speaker} key={i} className={i % 2 ? "flex-row-reverse" : "flex-row"}/>
+                  );
                })}
             </div>
-            <CategoriesShops />
+            {/* <CategoriesShops /> */}
             <AboutUs />
          </div>
       </div> /*end Speakers*/
