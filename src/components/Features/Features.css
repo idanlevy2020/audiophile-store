@@ -1,0 +1,54 @@
+/**************** For mobile phones: ****************/
+.Features{
+   width: 100%;
+   text-align: left;
+   color: #000;
+}
+
+.Features h1{
+   font-size: 24px;
+   font-weight: bold;
+   line-height: 1.5;
+   letter-spacing: 0.86px;
+   margin-bottom: 24px;
+}
+
+.Features p{
+   opacity: 0.5;
+   font-size: 15px;
+   font-weight: 500;
+   line-height: 1.67;
+}
+
+.FeaturesContent .p1{
+   margin-bottom: 24px;
+   width: 100%;
+}
+
+ @media only screen and (min-width: 600px) {
+   /* For tablets: */
+   .Features{
+      height:320px;
+      justify-content: space-between;
+      margin-bottom: 30px;
+   }
+
+   .Features h1{
+      font-size: 32px;
+      font-weight: bold;
+      line-height: 1.13;
+      letter-spacing: 1.14px;
+   }
+ }
+ 
+ @media only screen and (min-width: 768px) {
+   /* For desktop: */
+   .Features{
+      width: 635px;
+      justify-content: space-between;
+   }
+
+   .Features h1{
+      margin-bottom: 32px;
+   }
+ }
