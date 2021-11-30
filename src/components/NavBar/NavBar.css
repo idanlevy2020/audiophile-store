@@ -1,23 +1,31 @@
- .NavBar > ul {
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    width:420px;
-    padding: 16px 0px;
-    /* background-color: #101010; */
-  }
-   
-   .NavBar > ul > li > a {
-     display: block;
-     color: white;
-     text-align: center;
-     text-decoration: none;
-   }
- 
-   .NavBar > ul > li > a:hover {
-     color: #D87D4A;
-   }
+.NavBar > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.NavBar > ul > li > a {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+.NavBar > ul > li > a:hover {
+  color: #D87D4A;
+}
+
+.NavBar > .ul.flex-column li{
+  width:100%;
+}
+
+.NavBar > .ul.flex-column li:not(:last-child){
+  padding-bottom: 16px;
+}
+
+.NavBar > .ul.flex-row li:not(:last-child){
+  margin-right: 25px;
+}
+
+

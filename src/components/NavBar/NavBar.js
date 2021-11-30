@@ -5,11 +5,10 @@ function NavBar(props) {
    const links = props.links;
    return (
       <div className="NavBar">
-         <ul>
+         <ul className={"ul "+props.flex}>
             {links.map((link,i) => {
-               let classname="link"+(i+1);
                return (
-                  <li className={classname} key={i}>
+                  <li key={i}>
                      <Link to={link.path}>{link.text}</Link>
                   </li>
                );
