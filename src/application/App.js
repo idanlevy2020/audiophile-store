@@ -2,7 +2,6 @@ import "./App.css";
 import Header from "../layout/Header/Header";
 import Main from "../layout/Main/Main";
 import Footer from "../layout/Footer/Footer";
-
 import StoreProvider from "../contexts/StoreContext";
 
 function App() {
