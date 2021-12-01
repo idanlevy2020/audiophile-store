@@ -1,104 +1,245 @@
-.Home{
-   background-color: white;
-}
-
-/**********************.Home-part1 *****************************/
-.Home-part1{
-   background-color: #101010;
-   /* padding: 100px 0px 50px 0px; */
-   margin-bottom: 120px; 
-   align-items: center;
-   justify-content: space-between;
-}
-
-.Home-part1 > img{
-   background-color: #101010;
-   width: 708.8px;
-   height: 729px;
-   margin: 0px 50px;
+/**************** For mobile phones: ****************/
+/************.Home-part1 ************/
+.Home-part1 {
+   position: relative;
+   width: 100%;
+   height: auto;
 }
 
 .Home .Home-part1 .newProduct {
-   width: 360px;
-   height:350px;
+   position: absolute;
+   height: 100%;
+   text-align: center;
    color: white;
-   margin: 0px 50px;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.Home .Home-part1 .newProduct h1 {
+   font-size: 6vw;
+   /* font-size: 36px; */
+}
+
+.Home .Home-part1 .newProduct h3 {
+   font-size: 14px;
+   letter-spacing: 10px;
+   opacity: 0.5;
+   font-weight: 250;
+}
+
+.Home .Home-part1 .newProduct p {
+   opacity: 0.75;
+   font-size: 15px;
+   font-weight: 400;
+   line-height: 1.67;
+   width: 100%;
+}
+
+.Home-part1 > img {
+   width: 100%;
+   height: auto;
+}
+
+/************.Home-part3 ************/
+.Home-part3 {
+   background-color: #d87d4a;
+   color: white;
+   align-items: center;
+   height: auto;
+   padding: 55px 0px 30px 0px;
+}
+
+.Home-part3 .ZX9speaker {
+   text-align: center;
+   width: 80%;
+   height: 250px;
+}
+
+.Home-part3 .ZX9speaker h1 {
+   font-size: 36px;
+   font-weight: bold;
+   line-height: 1.11;
+   letter-spacing: 1.29px;
+}
+
+.Home-part3 .ZX9speaker p {
+   opacity: 0.75;
+   font-size: 15px;
+   font-weight: 400;
+   line-height: 1.67;
+}
+
+.Home-part3 > img {
+   width: 172.2px;
+   height: 207px;
+}
+
+/************.Home-part4 ************/
+.Home-part4 {
+   position: relative;
+   height: 320px;
+   padding: 24px 0px;
+}
+
+.Home-part4 img {
+   width: 100%;
+   height: 100%;
+}
+
+.Home-part4 .ZX7speaker {
+   position: absolute;
+   top: 50%;
+   left: 10%;
+   transform: translate(-10%, -50%);
+}
+
+.ZX7speaker-content {
+   width: 204px;
+   height: 118px;
    justify-content: space-between;
 }
 
-.Home .Home-part1 .newProduct h1{
-   font-size:50px;
-   font-weight: 500;
-   line-height: 1.04;
+.ZX7speaker h1 {
+   font-size: 28px;
+   font-weight: 620;
+   letter-spacing: 2px;
+   text-align: left;
+}
+
+/************.Home-part5 ************/
+.Home-part5 {
+   width: 100%;
+}
+
+.Home-part5 img {
+   width: 100%;
+   height: 200px;
+}
+
+.Home-part5 .earphonesYX1 {
+   width: 100%;
+   height: 200px;
+   border-radius: 8px;
+   background-color: #f1f1f1;
+   padding: 41px 0px 41px 24px;
+}
+
+.earphonesYX1-content {
+   width: 247px;
+   height: 118px;
+   justify-content: space-between;
+}
+
+.Home-part5 .earphonesYX1 h1 {
+   font-size: 28px;
+   font-weight: 620;
    letter-spacing: 2px;
 }
 
-/**********************.Home-part3 *****************************/
-.Home .Home-part3 {
-   background-color: #d87d4a;
-   color: white;
-   align-items: flex-end;
-   justify-content: space-around;
-   margin-bottom: 120px;
-   height: 560px;
+/************.AboutUs ************/
+.Home .AboutUs {
+   margin: 48px 0px 120px 0px;
 }
 
-.Home .Home-part3 .ZX9speaker {
-   justify-content: space-between;
-   align-self: center;
-   width: 330px;
-   height: 350px;
-   margin-right: 50px;
+@media only screen and (min-width: 600px) {
+   /* For tablets: */
+   /************.Home-part3 ************/
+   .Home-part3 {
+      padding: 52px 0px 64px 0px;
+   }
+
+   .Home-part3 .ZX9speaker {
+      justify-content: space-around;
+      text-align: center;
+      width: 50%;
+      height: 320px;
+   }
+
+   .Home-part3 .ZX9speaker h1 {
+      font-size: 56px;
+      font-weight: 500;
+      line-height: 1.04;
+      letter-spacing: 2px;
+   }
+
+   .Home-part3 > img {
+      width: 197.2px;
+      height: 237px;
+   }
+
+   /************.Home-part4 ************/
+   .Home-part4 {
+      padding: 32px 0px;
+   }
+   /************.Home-part5 ************/
+   .Home-part5 {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   .Home-part5 img,
+   .Home-part5 .earphonesYX1 {
+      max-width: 339px;
+      min-height: 320px;
+   }
+   /************.AboutUs ************/
+   .Home .AboutUs {
+      margin: 63px 0px 96px 0px;
+   }
 }
 
-.Home .Home-part3 .ZX9speaker > h1 {
-   font-size: 66px;
-   font-weight: normal;
-   line-height: 1;
+@media only screen and (min-width: 768px) {
+   /* For desktop: */
+   /************.Home-part3 ************/
+   .Home-part3 {
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 0px;
+      height: 597px;
+   }
+
+   .Home-part3 .ZX9speaker {
+      justify-content: space-around;
+      text-align: left;
+      width: 50%;
+      width: 349px;
+      align-self: center;
+   }
+
+   .Home-part3 .ZX9speaker h1 {
+      height: 116px;
+      font-size: 56px;
+      font-weight: 500;
+      line-height: 1.04;
+      letter-spacing: 2px;
+   }
+
+   .Home-part3 .ZX9speaker p {
+      opacity: 0.75;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.67;
+      padding: 30px 0px 30px 0px;
+   }
+
+   .Home-part3 > img {
+      width: 410.2px;
+      height: 464px;
+      align-self: flex-end;
+   }
+   /************.Home-part4 ************/
+   .Home-part4 {
+      padding: 48px 0px;
+   }
+   /************.Home-part5 ************/
+   .Home-part5 img,
+   .Home-part5 .earphonesYX1 {
+      max-width: 540px;
+      min-height: 320px;
+   }
+   /************.AboutUs ************/
+   .Home .AboutUs {
+      margin: 200px 0px;
+   }
 }
-
-/**********************.Home-part4 *****************************/
- .Home-part4 {
-   position: relative;
-   margin-bottom: 120px;
-   /* width: 1110px; */
-   height: 320px;
-   justify-content: space-around;
- }
-
- .Home-part4 img{
-    width: 100%;
-    border-radius: 8px;
- }
- 
- .Home .Home-part4 .ZX7speaker {
-   position: absolute;
-   top: 30%;
-   left: 10%;
-   /* transform: translate(-50%, -50%); */
-   padding-left: 20px;
-   padding-right: 20px;
- }
-
- .ZX7speaker h1{
-   margin-bottom: 32px;
- }
-
- .Home-part5 {
-   margin-bottom: 120px;
-   justify-content: space-between;
- }
-
- .Home .Home-part5 .earphonesYX1{
-   width: 540px;
-   height: 320px;
-   justify-content: center;
-   border-radius: 8px;
-   background-color: #f1f1f1;
-   padding-left:95px;
- }
-
- .Home .Home-part5 .earphonesYX1 h1{
-   margin-bottom: 32px;
- }
-
