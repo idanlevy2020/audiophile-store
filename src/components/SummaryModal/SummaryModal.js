@@ -5,13 +5,15 @@ import { Link } from "react-router-dom";
 import { Button } from "../../components/Button/Button";
 
 function SummaryModal(props) {
-   console.log('in SummaryMoadl propsare:',props);
+   console.log('in SummaryMoadl props are:',props);
    const value=useContext(StoreContext);
+   const addtoCart=value.addtoCart;
+   const subOneItemFromCart=value.subOneItemFromCart;
    const cart=value.cart;
    const totalPrice=value.totalPrice;
    return (
       <div className="SummaryModal">
-         <button className="close" onClick={()=>props.setModalIsOpen(false)}>&times;</button>
+         <button className="closebtn" onClick={(e) => props.closeModal(e)}>&times;</button>
          <h2>cart ({cart.length})</h2>
          <div className="items">
                {cart.map((item,i) => {
@@ -22,7 +24,11 @@ function SummaryModal(props) {
                            <span className="itemName">{item.name}</span>
                            <span className="itemPrice">${item.price}</span>
                         </div>
-                        <p className="itemCount">{item.count}</p> 
+                        <div className="buttonsCountContainer flex-row">
+                           <button onClick={() => subOneItemFromCart(item)}> - </button>
+                           <p className="itemCount">{item.count}</p>
+                           <button onClick={() => addtoCart(item,1)}> + </button>
+                        </div>
                      </div>
                   );
                })}

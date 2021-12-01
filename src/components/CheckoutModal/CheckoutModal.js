@@ -17,7 +17,7 @@ function CheckoutModal(props) {
    const [buttonHidden, setButtonHidden] = useState(true);
    return (
       <div className="CheckoutModal">
-         <button className="close" onClick={()=>props.setModalIsOpen(false)}>&times;</button>
+         <button className="closebtn" onClick={(e) => props.closeModal(e)}>&times;</button>
          <div className="checkMarkBox">
             <p className="checkMark">✓</p>
          </div>
