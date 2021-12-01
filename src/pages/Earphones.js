@@ -22,8 +22,8 @@ function Earphones() {
                   );
                })}
             </div>
-            {/* <CategoriesShops /> */}
-            {/* <AboutUs /> */}
+            <CategoriesShops />
+            <AboutUs />
          </div>
       </div> /*end Earphones*/
    );

@@ -22,7 +22,7 @@ function Speakers() {
                   );
                })}
             </div>
-            {/* <CategoriesShops /> */}
+            <CategoriesShops />
             <AboutUs />
          </div>
       </div> /*end Speakers*/
