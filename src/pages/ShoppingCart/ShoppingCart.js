@@ -9,12 +9,14 @@ function ShoppingCart() {
    const value=useContext(StoreContext);
    const cartLength=value.cart.length;
    let history = useHistory();
+   console.log('cartLength',cartLength);
    return (
       <div className="ShoppingCart">
          <div className="ShoppingCartContent">
             <button className="GoBackBtn" onClick={history.goBack}>Go Back</button>
-            <h1>Your Shopping Cart</h1>
+            {(cartLength===0) && <h1 style={{textAlign: "center"}}>Your Shopping Cart</h1>}
             {(cartLength===0) && <MessegeForCartEmpty />}
+            {(cartLength > 0) && <h1 style={{textAlign: "left"}}>Your Shopping Cart</h1>}
             {(cartLength > 0) && <ShoppingCartItems />}
          </div>
       </div>
