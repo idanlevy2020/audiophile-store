@@ -21,7 +21,7 @@ function Summary(props) {
    }
    
    function closeModal(e) {
-      if(e.target.className === "Modal") {
+      if ((e.target.className === "Modal")||(e.target.className === "closebtn")) {
          setModalIsOpen(false);
       }
    }
@@ -33,7 +33,7 @@ function Summary(props) {
                {cart.map((item,i) => {
                   return (
                      <div className="item flex-row" key={i}>
-                        {item.image}
+                        <img src={item.imagePathMobile} alt={item.name} />
                         <div className="itemDetails flex-column">
                            <span className="itemName">{item.name}</span>
                            <span>${item.price}</span>
@@ -61,7 +61,7 @@ function Summary(props) {
             </div>
             <Button size="small" variant="contained" bgcolor="orange" onClick={()=>openModal()}> CONTINUE AND PAY </Button>
             {(modalIsOpen)&&<div className="Modal" onClick={(e) => closeModal(e)}>
-               <CheckoutModal setModalIsOpen={setModalIsOpen} />
+               <CheckoutModal closeModal={closeModal}/>
             </div> }
 
       </div>

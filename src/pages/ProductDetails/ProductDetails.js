@@ -8,9 +8,8 @@ import InTheBox from "../../components/InTheBox/InTheBox";
 import SummaryModal from "../../components/SummaryModal/SummaryModal";
 import { StoreContext } from "../../contexts/StoreContext";
 import { useParams } from "react-router-dom";
-import ProductImages from "../../components/ProductImages/ProductImages";
 
-function ProductDetails(props) {
+function ProductDetails() {
    const value = useContext(StoreContext);
    const addtoCart = value.addtoCart;
 
@@ -31,8 +30,10 @@ function ProductDetails(props) {
       }
    }
 
+   console.log('modalIsOpen',modalIsOpen);
+
    function closeModal(e) {
-      if (e.target.className === "Modal") {
+      if ((e.target.className === "Modal")||(e.target.className === "closebtn")) {
          setModalIsOpen(false);
       }
    }
@@ -55,7 +56,7 @@ function ProductDetails(props) {
                      <Button size="small" variant="contained" bgcolor="orange" onClick={() => openModal()}> ADD TO CART </Button>
                      {modalIsOpen && (
                         <div className="Modal" id="modal" onClick={(e) => closeModal(e)}>
-                           <SummaryModal setModalIsOpen={props.setModalIsOpen}/>
+                           <SummaryModal closeModal={closeModal}/>
                            {/* <SummaryModal {...modalIsOpen}/> */}
                         </div>
                      )}
