@@ -1,49 +1,39 @@
 import "./CategoriesShops.css";
-import { Button } from "../../components/Button/Button";
+import {useContext} from "react";
+import {StoreContext} from "../../contexts/StoreContext"
+import Button from "../Button/Button"
 import { Link } from "react-router-dom";
 
 function CategoriesShops() {
-   let btn = <Button variant='text' bgcolor='' size="small">Shop<i className="fa fa-angle-right fa-lg"></i></Button>
-   const shops = [{
-      img: <img src="/images/shared/desktop/image-headphones.png" alt="headphones"/>,
-      title: "HEADPHONES",
-      pathLink:"/headphones",
-      button: btn,
-   }, 
-   {
-      img: <img src="/images/shared/desktop/image-speakers.png" alt="speakers"/>,
-      title: "SPEAKERS",
-      pathLink:"/speakers",
-      button: btn,
-   },
-   { 
-      img: <img src="/images/shared/desktop/image-earphones.png" alt="earphones"/>,
-      title: "EARPHONES",
-      pathLink:"/earphones",
-      button: btn,     
-   }];
+   const value = useContext(StoreContext);
+   const products = value.products;
+   console.log('products',products);
+   const shops = products.filter((product) =>(product.id === 76730)||(product.id === 76734)||(product.id === 76733));
    return (
       <div className="CategoriesShops">
-         <div className="shops flex-row wrap">
             {shops.map((shop,i) => {
                   return (
-                     <CategoriesShopsMain key={i} img={shop.img} title={shop.title} path={shop.pathLink} button={shop.button} />
+                     <Shop key={i} shop={shop} />
                   );
             })}
-         </div>
       </div> /*end CategoriesShops*/
    );
 }
 
-function CategoriesShopsMain(props) {
+function Shop(props) {
+   const product=props.shop;
    return (
-      <div className="CategoriesShopsMain">
-         {props.img}
-         <div className="category-btn-block">
-            <h3>{props.title}</h3>
-            <Link to={props.path}> {props.button}</Link>
+      <div className="Shop">
+         <img src={product.imagePathShopShared} alt={product.name} />
+         <div className="shop-box flex-column">
+            <h3>{product.type.toUpperCase()}</h3>
+            <Link to={`/products/${product.type}/${product.id}`}>
+               <Button variant='text' bgcolor='' size="small">
+                  Shop<i className="fa fa-angle-right fa-lg"></i>
+               </Button>
+            </Link>
          </div>
-      </div> /*end CategoriesShopsMain*/
+      </div> /*end Shop*/
    );
 }  
 
