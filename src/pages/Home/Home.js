@@ -22,7 +22,7 @@ function Home() {
    //Todo - improve Home and use in products array
    return (
       <div className="Home">
-         {/* <div className="Home-part1 flex-column">
+         <div className="Home-part1 flex-column">
             <div className="newProduct flex-column">
                <h3>NEW PRODUCT</h3>
                <h1>XX99 Mark II Headphone</h1>
@@ -35,7 +35,7 @@ function Home() {
               </Link>
             </div>
             <img src="/images/home/tablet/image-header.jpg" alt="xx99Mark2"/>
-         </div> */}
+         </div>
           <div className="page-content">
             <div className="Home-part2"> 
                <CategoriesShops />
