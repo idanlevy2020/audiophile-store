@@ -6,8 +6,7 @@ function Product(props) {
    const product = props.product;
 
    return (
-      <div className="Product">
-         <div className="Product-container flex-column">
+      <div className="Product flex-column">
          {/* <div className={"Product-container "+props.className}> */}
             {/* <div className={"desktop "+props.className}> */}
                <picture>
@@ -24,8 +23,6 @@ function Product(props) {
                         See product
                      </Button>
                   </Link>
-               </div>
-               
             {/* </div> */}
          </div>
       </div> /*end Product*/

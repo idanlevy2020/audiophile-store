@@ -1,17 +1,19 @@
 /**************** For mobile phones: ****************/
-.Product-container {
+.Product {
    justify-content: space-between;
    align-items: center;
 }
 
 .Product img {
-   width: 327px;
-   height: 352px;
+   width:100%;
+   height:auto;
 }
 
 .Product .productDetails {
+   width: 100%;
    align-items: center;
    justify-content: space-between;
+   margin-bottom:120px;
 }
 
 .Product p {
@@ -40,15 +42,6 @@
 
 @media only screen and (min-width: 600px) {
    /* For tablets: */
-   /* .Product-container {
-      flex-direction: column;
-   } */
-
-   .Product img {
-      width: 100%;
-      height: 352px;
-   }
-
    .Product .titleNewProduct {
       margin: 52px 0px 16px 0px;
    }
@@ -67,16 +60,15 @@
 
 @media only screen and (min-width: 768px) {
    /* For desktop: */
-
-   .Product-container {
+   .Product {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-   }
-
-   .Product {
       margin-bottom: 160px;
       width: 100%;
+      /* min-height: 354px;
+      max-height: 560px; */
+
    }
    /* .Product-container{
       height: 560px;
@@ -90,37 +82,31 @@
       flex-direction: row;
    } */
 
+   .Product img {
+      min-width: 334px;
+      max-width:540px;
+      height:auto;
+   }
+
    .Product .productDetails {
-      width: 445px;
-      height: 100%;
-      /* height: 560px; */
+      min-width: 334px;
+      max-width:445px;
+      height:auto;
       align-items: flex-start;
       justify-content: center;
+      margin-bottom:0px;
    }
 
    .Product .titleNewProduct {
       margin: 0px 0px 16px 0px;
-      width: 100%;
    }
 
    .Product p {
       text-align: left;
    }
 
-   .Product img {
-      /* max-width: 540px; */
-      width: 540px;
-      height: 560px;
-      /* height:auto; */
-      /* float:right; */
-   }
-
    .Product .titleNewProduct {
       margin-bottom: 16px;
-   }
-
-   .Product .titleProductName {
-      width: 445px;
    }
 
    .Product .titleProductDesc {
